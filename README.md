@@ -148,7 +148,6 @@ disqusShortname = "your_disqus_shortname"
   signupheader = "Join Our Newsletter"
   showmodaltimeout = 5000 #show popover modal after time interval in milliseconds.
   mouseleave = true #show popover when mouse leaves window: true/false.
-  animationsenabled = true #enable animations: true/false.
   modalsize = "" #lg or sm. Empty is md. If phone is detected lg is used.
   imagedescription = "Placeholder image for this popover modal optin form"
   signuptext = "Signup today for free and be the first to get notified on new updates."
