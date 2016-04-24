@@ -242,7 +242,7 @@ The popover is built with:
 * isMobile.js v0.3.9
 * angular-storage
 
-In static/popover/ you will find a minified and a un-minified version of popover.js.
+In static/js/popover/ you will find a minified and a un-minified version of popover.js.
 
 ## Tips
 
