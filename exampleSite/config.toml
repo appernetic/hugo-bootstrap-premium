@@ -47,7 +47,7 @@ disqusShortname = "shortname"
     name = "paper"
 
 [params.popover]
-    enablepopover = false #enable or disable popover: true/false.
+    enablepopover = true #enable or disable popover: true/false.
     posturl = "https://zapier.com/hooks/..." # Your zapier post hook.
     headerimage = "//placehold.it/1000x600"
     expirecookie = 5 #show it again after number of days to visitors that has not subscribed.
