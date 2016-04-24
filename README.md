@@ -246,18 +246,19 @@ In static/popover/ you will find a minified and a un-minified version of popover
 
 ## Tips
 
-* If you've added `theme = "hugo-bootstrap-premium"` to your `config.toml`, you don't need to keep using the `--theme=hugo-bootstrap` flag!
+* If you've added `theme = "hugo-bootstrap-premium"` to your `config.toml`, you don't need to keep using the `--theme=hugo-bootstrap-premium` flag!
 * Although all of the syntax highlight CSS files under the theme's `static/css/highlight` are bundled with the site, only the one you choose will be included in the page and delivered to the browser.
 * Change the favicon by providing your own as `static/favicon.png` (and `static/touch-icon-144-precomposed.png` for Apple devices) in your site directory.
 * Hugo makes it easy to override theme layout and behaviour, read about it [here](http://gohugo.io/themes/customizing).
 * Pagination is set to 10 items by default, change it by updating `paginate = 10` in your `config.toml`.
 
 ## Changes and enhancements by Appernetic from the [Murali Rath](https://github.com/mmrath/hugo-bootstrap/) theme version
+
+* Added popover e-mail subscription opt-in form.
 * Added more space between top menu and content.
 * Removed ```class="clearfix"``` in sidebar links.
 * Added instructions in the README for use with Appernetic.io.
-* Added favicon.
-* Added config.toml file to the theme folder.
+* Added exampleSite folder.
 * Added correct image links to images in the README file.
 
 ## Changes and enhancements by [Murali Rath](https://github.com/mmrath/hugo-bootstrap/) from the original theme
@@ -270,7 +271,7 @@ Obviously largely a port of the awesome [Hyde-Y](https://github.com/enten/hyde-y
 
 ## Questions, ideas, bugs, pull requests?
 
-All feedback is welcome! Head over to the [issue tracker](https://github.com/appernetic/hugo-bootstrap-mod/issues).
+All feedback is welcome! Head over to the [issue tracker](https://github.com/appernetic/hugo-bootstrap-premium/issues).
 
 ## License
 
