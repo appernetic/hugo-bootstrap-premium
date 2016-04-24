@@ -1,0 +1,25 @@
+  <div class="container">
+    {{ if isset .Site.Params.showBlogHeader true }}
+      <div class="row">
+        <header>
+          {{ partial "bloc/content/h1-title" . }}
+          {{ partial "bloc/content/lastupdate" . }}
+        </header>
+      </div>
+    {{ end }}
+    <div class="row">
+      <div class="col-sm-{{ if and (isset .Site.Params "showRightSidebar") (eq .Site.Params.showRightSidebar true) }}9{{ else }}12{{ end }}">
+        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        {{ range $paginator.Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
+        {{ partial "bloc/content/pagination" . }}
+      </div>
+      {{ if and (isset .Site.Params "showRightSidebar") (eq .Site.Params.showRightSidebar true)}}
+        <div class="col-sm-3">
+          {{ partial "bloc/content/sidebar" . }}
+        </div>
+      {{ end }}
+    </div>
+
+  </div>

@@ -1,0 +1,7 @@
+{{ if .IsPage }}
+  {{ if .Description }}
+    {{ .Description | markdownify }}
+  {{ else }}
+    {{ .Summary }}
+  {{ end }}
+{{ end }}

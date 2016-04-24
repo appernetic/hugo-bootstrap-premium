@@ -1,0 +1,52 @@
+<script src="{{ "/js/jquery.min.js" | absURL }}"></script>
+<script src="{{ "/js/bootstrap.min.js" | absURL }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="/js/popover/angular-storage.min.js"></script>
+
+{{ with .Site.DisqusShortname }}
+<script type="text/javascript">
+  (function() {
+    // Don't ever inject Disqus on localhost--it creates unwanted
+    // discussions from 'localhost:1313' on your Disqus account...
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//{{ . }}.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+{{ end }}
+
+<script src="{{ "/js/highlight.pack.js" | absURL }}"></script>
+<script src="{{ "/js/site.js" | absURL }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+{{ with .Site.Params.googleAnalytics }}
+<script>
+  var _gaq=[['_setAccount','{{ . }}'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+{{ end }}
+<script>
+var ENABLE_POPOVER = {{.Site.Params.popover.enablepopover}}; // enable or disable popover: true/false.
+var EXPIRE_COOKIE = {{.Site.Params.popover.expirecookie}}; // show it again after number of days to visitor that has not subscribed.
+var SHOW_MODAL_TIMEOUT = {{.Site.Params.popover.showmodaltimeout}}; // show popover modal after time interval in milliseconds.
+var MOUSE_LEAVE = {{.Site.Params.popover.mouseleave}}; //show popover when mouse leaves window: true/false.
+var MODAL_SIZE = {{.Site.Params.popover.modalsize}}; //lg or sm. Empty is md. If phone is detected lg is used.
+var POST_URL = {{.Site.Params.popover.posturl}}; // post url, for example zapier hooks.
+var SIGNUP_HEADER = {{.Site.Params.popover.signupheader}};
+var HEADER_IMAGE = {{.Site.Params.popover.headerimage}};
+var IMG_DESCRIPTION = {{.Site.Params.popover.imagedescription}};
+var SIGNUP_TEXT = {{.Site.Params.popover.signuptext}};
+var INPUT_PLACEHOLDER = {{.Site.Params.popover.inputplaceholder}};
+var SUBMIT_BUTTON = {{.Site.Params.popover.submitbutton}};
+var SUCCESS_MESSAGE = {{.Site.Params.popover.successmessage}};
+var ERROR_MESSAGE = {{.Site.Params.popover.errormessage}};
+var OPTIN = {{.Site.Params.popover.optin}};
+</script>
+<script src="/js/popover/angular-modal-service.min.js"></script>
+<script src="/js/angular-ismobile.min.js"></script>
+<script src="/js/popover/popover.min.js"></script>

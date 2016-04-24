@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 14px;
+  margin-bottom: 70px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  //margin-top: 3rem;
+  width: 100%;
+  text-align: left;
+  //margin-top: 20px;
+  padding-bottom: 1rem;
+//  padding-top: 1rem;
+}
+
+
+body > .container {
+  padding: 75px 15px 0;
+}
+
+.navbar-brand {
+padding: 20px;
+vertical-align: baseline;;
+}
+
+.navbar-brand-img {
+padding: 0;
+}
+
+a.navbar-brand-img>img {
+  vertical-align: bottom;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.margin-10{margin-bottom:10px; margin-right:10px;}
+
+p {
+  text-align: justify;
+}
+
+/* Responsive video? */
+iframe {
+  max-width: 100%;
+}
+
+/* Popover */
+.modal.ng-enter {
+  transition: opacity 1.5s ease-out;
+  opacity: 0;
+}
+.modal.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.modal.ng-leave {
+  transition: opacity 1.5s ease-out;
+  opacity: 1;
+}
+.modal.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+#Email.fieldValid {
+  border: 1px solid #00ff00;
+}
+#Email.fieldInvalid {
+  border: 1px solid #ff0000;

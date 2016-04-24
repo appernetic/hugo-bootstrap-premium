@@ -1,0 +1,34 @@
+<div class="modal">
+  <div class="modal-dialog modal-{{modalSize}}">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+        <h3 class="modal-title">{{ signupheader}}</h3>
+      </div>
+
+      <div class="modal-body">
+        <img ng-src="{{headerimage}}" alt="{{imgdescription}}" class="img-responsive" ng-if="headerimage">
+        <p>{{signuptext}}</p>
+        <form name="formNg">
+          <input class="col-xs-12" type="email" ng-class="myForm.getFormFieldCssClass(formNg.email)" id="Email" name="email" ng-model="myForm.Email" ng-required="true" ng-minlength="5" placeholder="{{inputplaceholder}}">
+        </form><br>
+        <div>
+          <p ng-if="SuccessMessage" class="text-success">{{SuccessMessage}}</p>
+          <p ng-if="ErrorMessage" class="text-warning">{{ErrorMessage}}</p>
+        </div>
+      </div>
+
+      <div class="modal-footer" ng-if="!isPhone">
+        <button class="btn btn-primary btn-block" type="button" ng-click="ok()" > {{submitbutton}} </button>
+        <button class="btn btn-warning btn-block" type="button" ng-click="cancel()"> Cancel </button>
+      </div>
+
+      <div class="modal-footer" ng-if="isPhone">
+        <button class="btn-lg btn-primary btn-block" type="button" ng-click="ok()" > {{submitbutton}} </button>
+        <button class="btn-lg btn-warning btn-block" type="button" ng-click="cancel()"> Cancel </button>
+      </div>
+
+    </div>
+  </div>
+</div>

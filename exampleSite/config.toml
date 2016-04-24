@@ -1,0 +1,103 @@
+baseurl = "/"
+
+# Site title
+title = "Test Site" 
+
+
+# Copyright
+copyright = "(c) 2016 yourname."
+
+# Language
+languageCode = "en-EN"
+
+# SES friendly url:s
+canonifyurls = true
+
+# Frontmatter format
+# "yaml", "toml", "json"
+metaDataFormat = "toml"
+
+# Theme to use (located in /themes/THEMENAME/)
+ theme = "hugo-bootstrap-premium"
+
+# Pagination
+paginate = 10
+paginatePath = "page"
+
+# Enable Disqus integration
+disqusShortname = "appernetic"
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+    code = "/:slug/"
+
+[taxonomies]
+    tag = "tags"
+    topic = "topics"
+
+[author]
+    name = "yourname"
+    email = "yourname@example.com"
+
+#
+# All parameters below here are optional and can be mixed and matched.
+#
+
+[params.theme]
+    name = "paper"
+
+[params.popover]
+    enablepopover = false #enable or disable popover: true/false.
+    posturl = "https://zapier.com/hooks/catch/1227569/2vcwb6/"
+    headerimage = "//placehold.it/1000x600"
+    expirecookie = 5 #show it again after number of days to visitors that has not subscribed.
+    signupheader = "Join Our Newsletter"
+    showmodaltimeout = 5000 #show popover modal after time interval in milliseconds.
+    mouseleave = true #show popover when mouse leaves window: true/false.
+    modalsize = "" #lg or sm. Empty is md. If phone is detected lg is used.
+    imagedescription = "Placeholder image for this popover modal optin form"
+    signuptext = "Signup today for free and be the first to get notified on new updates."
+    inputplaceholder = "Enter your email"
+    submitbutton = "Subscribe"
+    successmessage = "Thanks for your subscription!"
+    errormessage = "Submitting form failed!"
+    optin = true #opt-in: true/false
+
+[params]
+    # You can use markdown here.
+    BrandImage = "http://blog.appernetic.io/images/apperneticlogo.png" #top header brand image.
+    brand = "Appernetic blog" # brand image alt text.
+    topline = "few words about your site"
+    footline = "code with <i class='fa fa-heart'></i>"
+
+    # Text for the top menu link, which goes to the root URL for the site.
+    # Default (if omitted) is "Home".
+    home = "home"
+
+	   # Show a sidebar menu
+    showRightSidebar = true
+    # Select a syntax highlight.
+    # Check the static/css/highlight directory for options.
+    highlight = "default"
+
+    # Google Analytics.
+    googleAnalytics = "Your Google Analytics tracking code"
+
+    # Sidebar social links.
+    github = "Appernetic" # Your Github profile ID
+    bitbucket = "" # Your Bitbucket profile ID
+    linkedin = "" # Your LinkedIn profile ID (from public URL)
+    googleplus = "111074595662096336201" # Your Google+ profile ID
+    facebook = "Appernetic" # Your Facebook profile ID
+    twitter = "Appernetic" # Your Twitter profile ID
+    youtube = ""  # Your Youtube channel ID
+    flattr = ""  # populate with your flattr uid
+
+[blackfriday]
+    angledQuotes = true
+    fractions = false
+    hrefTargetBlank = false
+    latexDashes = true
+    plainIdAnchors = true
+    extensions = []
+    extensionmask = []
