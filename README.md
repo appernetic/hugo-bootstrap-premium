@@ -1,6 +1,6 @@
-hugo-bootstrap-mod
-==================
-A theme with bootstrap, bootswatch(optional), font-awesome, highlightjs
+hugo-bootstrap-premium
+======================
+A theme with bootstrap, bootswatch(optional), font-awesome, highlightjs and a popover opt-in form (optional).
 
 *NOTE: This theme is copied from Hyde-Y. Not everything is ported to bootstrap.
 Feel free to make changes and open pull requests.*
@@ -27,7 +27,7 @@ Hugo-bootstrap-mod theme with default settings.
 1. Select "Themes".
 2. At the bottom of the Themes page paste the git link from GitHub (see image fig 1).
 3. If you want to update your config settings file click the "Copy theme config" button in the theme modal popup (WARNING! The current settings file will be overwritten), otherwise follow step 4.
-4. In Settings change the line theme = "theme-name-here" to theme = "hugo-bootstrap-mod"
+4. In Settings change the line theme = "theme-name-here" to theme = "hugo-bootstrap-premium"
 5. To configure menues and footer you need access to the data folder, read more in section "Access data folders".
 5. Click the button: Preview or Publish
 6. Wait 10 min or clear your local browser cache to see changes at GitHub. In preview content is updated imediatley but CSS changes need a cache clear to be visible.  
@@ -109,7 +109,7 @@ languageCode = "en-EN"
 metaDataFormat = "yaml"
 
 # Theme to use (located in /themes/THEMENAME/)
-theme = "hugo-bootstrap"
+theme = "hugo-bootstrap-premium"
 
 # Pagination
 paginate = 10
@@ -142,7 +142,7 @@ disqusShortname = "your_disqus_shortname"
 
 [params.popover]
   enablepopover = false #enable or disable popover: true/false.
-  posturl = "https://zapier.com/hooks/catch/1227569/2vcwb6/"
+  posturl = "https://zapier.com/hooks/..."
   headerimage = "//placehold.it/1000x600"
   expirecookie = 5 #show it again after number of days to visitor that has not subscribed.
   signupheader = "Join Our Newsletter"
