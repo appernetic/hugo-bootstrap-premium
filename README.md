@@ -14,12 +14,12 @@ Here you can check out Appernetic's blog site using this [theme](https://apperne
 
 ![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-mod/master/images/screenshot2.png)
 
-Hugo-bootstrap-mod theme used with ```showRightSidebar = true``` and ```[params.theme] name = "paper"``` .
+Hugo-bootstrap-premium theme used with ```showRightSidebar = true``` and ```[params.theme] name = "paper"``` .
 
 
 ![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-mod/master/images/screenshot.png)
 
-Hugo-bootstrap-mod theme with default settings.
+Hugo-bootstrap-premium theme with default settings.
 
 
 ## Installation with Appernetic Static Site Generator as a Service
@@ -246,7 +246,7 @@ In static/popover/ you will find a minified and a un-minified version of popover
 
 ## Tips
 
-* If you've added `theme = "hugo-bootstrap-mod"` to your `config.toml`, you don't need to keep using the `--theme=hugo-bootstrap` flag!
+* If you've added `theme = "hugo-bootstrap-premium"` to your `config.toml`, you don't need to keep using the `--theme=hugo-bootstrap` flag!
 * Although all of the syntax highlight CSS files under the theme's `static/css/highlight` are bundled with the site, only the one you choose will be included in the page and delivered to the browser.
 * Change the favicon by providing your own as `static/favicon.png` (and `static/touch-icon-144-precomposed.png` for Apple devices) in your site directory.
 * Hugo makes it easy to override theme layout and behaviour, read about it [here](http://gohugo.io/themes/customizing).
