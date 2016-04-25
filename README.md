@@ -8,16 +8,14 @@ Feel free to make changes and open pull requests.*
 
 <small>Forked from [Hyde-Y](https://github.com/enten/hyde-y)</small>
 
-Here you can check out Appernetic's blog site using this [theme](https://appernetic.github.io/).
-
 ## Screenshots
 
-![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-mod/master/images/screenshot2.png)
+![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-premium/master/images/screenshot2.png)
 
 Hugo-bootstrap-premium theme used with ```showRightSidebar = true``` and ```[params.theme] name = "paper"``` .
 
 
-![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-mod/master/images/screenshot.png)
+![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-premium/master/images/screenshot.png)
 
 Hugo-bootstrap-premium theme with default settings.
 
@@ -27,13 +25,13 @@ Hugo-bootstrap-premium theme with default settings.
 1. Select "Themes".
 2. At the bottom of the Themes page paste the git link from GitHub (see image fig 1).
 3. If you want to update your config settings file click the "Copy theme config" button in the theme modal popup (WARNING! The current settings file will be overwritten), otherwise follow step 4.
-4. In Settings change the line theme = "theme-name-here" to theme = "hugo-bootstrap-premium"
+4. In Settings change the line under [params.popover] enablepopover = false if you don't use the popover.
 5. To configure menues and footer you need access to the data folder, read more in section "Access data folders".
-5. Click the button: Preview or Publish
+5. Click the button: Preview or Publish.
 6. Wait 10 min or clear your local browser cache to see changes at GitHub. In preview content is updated imediatley but CSS changes need a cache clear to be visible.  
 
 
-![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-mod/master/images/cloneatheme.png)
+![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-premium/master/images/cloneatheme.png)
 
 Figure 1. Copy git link from GitHub.
 
@@ -62,7 +60,7 @@ Option 2
 $ cd your_site_repo/
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/mmrath/hugo-bootstrap
+$ git clone https://github.com/appernetic/hugo-bootstrap-premium
 ```
 
 See the [official Hugo themes documentation](http://gohugo.io/themes/installing) for more info.
@@ -83,9 +81,9 @@ This theme expects a relatively standard Hugo blog/personal site layout:
     └── other_page.md
 ```
 
-Just run `hugo --theme=hugo-bootstrap` to generate your site!
+Just run `hugo --theme=hugo-bootstrap-premium` to generate your site!
 
-## Configuration (Applies to Appernetic.io also)
+## Configuration
 
 ### Hugo
 
@@ -93,7 +91,7 @@ An example of what your site's `config.toml` could look like. All theme-specific
 
 ``` toml
 # hostname (and path) to the root eg. http://spf13.com/
-baseurl = "http://www.example.com"
+baseurl = "/" # In most cases this will work.
 
 # Site title
 title = "sitename"
@@ -137,8 +135,9 @@ disqusShortname = "your_disqus_shortname"
 # bootswatch theme name, unmark and select one: cerulean, cosmo, cyborg, darkly,
 # default, flatly, journal,  lumen, paper, readable, sandstone, simplex,
 # slate, spacelab, superhero, united, yeti.
-#[params.theme]
-#  name = "paper"
+
+[params.theme]
+  name = "paper"
 
 [params.popover]
   enablepopover = false #enable or disable popover: true/false.
@@ -248,7 +247,11 @@ In static/js/popover/ you will find a minified and a un-minified version of popo
 
 * I couldn't use uibModalInstance. Somehow dots is escaped in variables that are between script tags in Hugo compiled html files. So it was not possible to pass url's from the config file to the angular app.
 * I had to use angular-modal-service and couldn't get animation to work. So therefore no animations!
-* I could only get $location.absUrl() to work in Angular so I had to do my own function to make the modal to work in the preview (in Appernetic).  
+* I could only get $location.absUrl() to work in Angular so I had to do my own function to make the modal to work in the preview (in Appernetic).
+
+### Bugs
+
+* If the POST url is wrong you will not get the error message in the popover. Instead you get a success message or only an error in the browser console such as: XMLHttpRequest cannot load https://zapier.com/hooks/. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://preview.appernetic.io' is therefore not allowed access. The response had HTTP status code 404.
 
 ## Tips
 
