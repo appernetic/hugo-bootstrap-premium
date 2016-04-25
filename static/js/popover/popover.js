@@ -31,7 +31,7 @@ var host = $location.host();
   };
   var timeoutTrigger = SHOW_MODAL_TIMEOUT;
   var mouseLeave = MOUSE_LEAVE;
-  var templateurl = "/modal/popover.html";
+  var templateurl = "/popover.html";
   function isFromBiggerThanTo(dtmfrom, dtmto){
     return dtmfrom >=  dtmto;
   }
@@ -39,7 +39,7 @@ var host = $location.host();
   var rightnow = new Date();
 
 if(host == 'preview.appernetic.io'){
-  templateurl = "/preview/modal/popover.html";
+  templateurl = "/preview/popover.html";
 };
   $scope.open = function(size) {
     // Just provide a template url, a controller and call 'showModal'.
