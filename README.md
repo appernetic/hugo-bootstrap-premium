@@ -145,8 +145,9 @@ disqusShortname = "your_disqus_shortname"
   posturl = "https://zapier.com/hooks/..."
   headerimage = "//placehold.it/1000x600"
   expirecookie = 5 #show it again after number of days to visitor that has not subscribed.
+  cookiename = "mycookie1" #give the cookie a unique name variable (avoid spaces and strange characters).
   signupheader = "Join Our Newsletter"
-  showmodaltimeout = 5000 #show popover modal after time interval in milliseconds.
+  showmodaltimeout = 10000 #show popover modal after time interval in milliseconds.
   mouseleave = true #show popover when mouse leaves window: true/false.
   modalsize = "" #lg or sm. Empty is md. If phone is detected lg is used.
   imagedescription = "Placeholder image for this popover modal optin form"
@@ -242,6 +243,12 @@ The popover is built with:
 * angular-storage
 
 In static/js/popover/ you will find a minified and a un-minified version of popover.js.
+
+### Workarounds to bugs that are not solved
+
+* I couldn't use uibModalInstance. Somehow dots is escaped in variables that are between script tags in Hugo compiled html files. So it was not possible to pass url's from the config file to the angular app.
+* I had to use angular-modal-service and couldn't get animation to work. So therefore no animations!
+* I could only get $location.absUrl() to work in Angular so I had to do my own function to make the modal to work in the preview (in Appernetic).  
 
 ## Tips
 
