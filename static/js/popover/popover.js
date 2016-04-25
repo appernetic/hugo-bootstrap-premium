@@ -11,9 +11,9 @@ angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
     this.Data.showSettings = val;
   };
 })
-.controller("MyController", function($scope, $timeout, toggleServices, store, isMobile,ModalService) {
+.controller("MyController", function($scope, $timeout, toggleServices, store, isMobile, ModalService, $location) {
 var modalSize = MODAL_SIZE;
-
+var host = $location.host();
   if (isMobile.phone) {
     modalSize = "lg"; // large modal for phones!
   }
@@ -31,17 +31,20 @@ var modalSize = MODAL_SIZE;
   };
   var timeoutTrigger = SHOW_MODAL_TIMEOUT;
   var mouseLeave = MOUSE_LEAVE;
-
+  var templateurl = "/modal/popover.html";
   function isFromBiggerThanTo(dtmfrom, dtmto){
     return dtmfrom >=  dtmto;
   }
 
   var rightnow = new Date();
 
+if(host == 'preview.appernetic.io'){
+  templateurl = "/preview/modal/popover.html";
+};
   $scope.open = function(size) {
     // Just provide a template url, a controller and call 'showModal'.
     ModalService.showModal({
-      templateUrl: "/modal/popover.html",
+      templateUrl: templateurl,
       controller: "ModalInstanceCtrl",
       inputs: {
         modalSize: modalSize
