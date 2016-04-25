@@ -48,11 +48,12 @@ disqusShortname = "shortname"
 
 [params.popover]
     enablepopover = true #enable or disable popover: true/false.
-    posturl = "https://zapier.com/hooks/" # Your zapier post hook.
+    posturl = "https://zapier.com/hooks/catch/1227563/" # Your zapier post hook.
     headerimage = "//placehold.it/1000x600"
     expirecookie = 5 #show it again after number of days to visitors that has not subscribed.
+    cookiename = "mycookie1" #give the cookie a unique name variable (avoid spaces and strange characters).
     signupheader = "Join Our Newsletter"
-    showmodaltimeout = 5000 #show popover modal after time interval in milliseconds.
+    showmodaltimeout = 10000 #show popover modal after time interval in milliseconds.
     mouseleave = true #show popover when mouse leaves window: true/false.
     modalsize = "" #lg or sm. Empty is md. If phone is detected lg is used.
     imagedescription = "Placeholder image for this popover modal optin form"
