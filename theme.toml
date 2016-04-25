@@ -1,10 +1,10 @@
 name = "Hugo Bootstrap Premium"
 license = "MIT"
-licenselink = "https://github.com/appernetic/hugo-bootstrap-mod/LICENSE.md"
+licenselink = "https://github.com/appernetic/hugo-bootstrap-premium/LICENSE.md"
 description = "A hugo theme using bootstrap, bootswatch, font-awesome, highlight.js and a popover email opt-in form"
 homepage = "https://github.com/appernetic/hugo-bootstrap-premium"
 tags = ["blog", "technical", "personal"]
-features = ["blog", "technical", "personal, popover opt-in form"]
+features = ["blog", "technical", "personal"]
 min_version = 0.15
 
 [author]
