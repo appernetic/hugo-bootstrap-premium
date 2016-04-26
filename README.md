@@ -232,7 +232,7 @@ Create `data/FootMenu.toml` to configure the footer navigation links. Example be
 
 ## Popover e-mail subscription opt-in form
 
-The popover e-mail opt-in form is a bootstrap modal (also commonly referred to as a light box). You can configure it in the config.toml settings file. It detects mobile devices and sets a cookie. It will use a large modal and large buttons for mobile devices. You can enable/disable it, configure delay, activate popover if mouse leave window, number of days to not show it to visitors that has not subscribed, show an image etc. It is perfect to use it with services such as Zapier in combination with Mailchimp. The form will POST the variables: Email as a string and Optin as a boolean to the URL of your choice. The variables is case sensitive. 
+The popover e-mail opt-in form is a bootstrap modal (also commonly referred to as a light box). You can configure it in the config.toml settings file. It detects mobile devices and sets a cookie. It will use a large modal and large buttons for mobile devices. You can enable/disable it, configure delay, activate popover if mouse leave window, number of days to not show it to visitors that has not subscribed, show an image etc. It is perfect to use it with services such as Zapier in combination with Mailchimp. The form will POST the variables: Email as a string and Optin as a boolean to the URL of your choice. The variables is case sensitive.
 
 Remember to change the cookie name in settings to a unique name if you use the popover, there is a very small possibility that a visitor from another website has a cookie set with the same name you have set.
 
@@ -247,7 +247,7 @@ In static/js/popover/ you will find a minified and a un-minified version of popo
 
 ### Workarounds to bugs that are not solved
 
-* I couldn't use uibModalInstance. Somehow dots is escaped in variables that are between script tags in Hugo compiled html files. So it was not possible to pass url's from the config file to the angular app.
+* I couldn't use uibModalInstance. Somehow dots is escaped in variables that are between script tags in Hugo compiled html files. So it was not possible to pass url's from the config file to the angular app. Possible not tested workaround for uib modal is to use: {{ .Site.Params.popover.posturl | safeJS }}
 * I had to use angular-modal-service and couldn't get animation to work. So therefore no animations!
 * I could only get $location.absUrl() to work in Angular so I had to do my own function to make the modal to work in the preview (in Appernetic).
 
