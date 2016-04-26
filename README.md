@@ -275,6 +275,7 @@ You can use the theme with both SumoMe and MailMunch by adding the respective id
 ## Changes and enhancements by Appernetic from the [Murali Rath](https://github.com/mmrath/hugo-bootstrap/) theme version
 
 * Added popover e-mail subscription opt-in form.
+* Added Sumome and MailMunch forms.
 * Added more space between top menu and content.
 * Removed ```class="clearfix"``` in sidebar links.
 * Added instructions in the README for use with Appernetic.io.
