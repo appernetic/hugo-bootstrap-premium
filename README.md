@@ -1,6 +1,6 @@
 hugo-bootstrap-premium
 ======================
-A theme with bootstrap, bootswatch(optional), font-awesome, highlightjs and a popover opt-in form (optional).
+A theme with bootstrap, bootswatch(optional), font-awesome, highlightjs, popover opt-in form (optional), MailMunch (optional) and SumoMe (optional).
 
 *NOTE: This theme is copied from Hyde-Y. Not everything is ported to bootstrap.
 Feel free to make changes and open pull requests.*
