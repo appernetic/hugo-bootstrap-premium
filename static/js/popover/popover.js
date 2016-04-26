@@ -72,7 +72,6 @@ angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
     if(isitpreview.indexOf('preview') > -1) {
       templateurl = '/' + thepath[1] + '/' + thepath[2] + '/modal/' + 'popover.html';
     };
-    console.log(templateurl);
     $scope.open = function(size) {
       // Just provide a template url, a controller and call 'showModal'.
       ModalService.showModal({
@@ -148,7 +147,7 @@ angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
     $scope.modalSize = modalSize;
     $scope.optin = OPTIN;
     var cookieName = COOKIE_NAME;
-    
+
     if (isMobile.phone) {
       $scope.isPhone = true;
     }
@@ -188,12 +187,12 @@ angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
             'Content-Type': undefined
           },
           data: {
-            "email": $scope.myForm.Email,
-            "optin": $scope.optin
+            Email: $scope.myForm.Email,
+            Optin: $scope.optin
           },
         };
         var responsePromise = $http(config);
-        responsePromise.success(function(dataFromServer, status, headers, config) {
+        responsePromise.success(function(data, status, headers, config) {
           $scope.SuccessMessage = SUCCESS_MESSAGE;
           $timeout(function () {
             $scope.SuccessMessage = "";
