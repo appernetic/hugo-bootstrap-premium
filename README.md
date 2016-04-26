@@ -44,7 +44,7 @@ To access the data folder you have two options:
 Option 1
 
 1. First fork this theme repo.
-2. Find the data folder and add a Menu.toml file.
+2. View your forked repo at GitHub in your browser, find the data folder and add a Menu.toml file.
 2. Clone your forked repo in Appernetic.io
 
 Option 2
