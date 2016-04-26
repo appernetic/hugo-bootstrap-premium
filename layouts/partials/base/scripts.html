@@ -1,3 +1,11 @@
+{{ if isset .Site.Params "mailmunchid" }}
+<!-- MailMunch for https://blog.appernetic.io -->
+<script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="{{ .Site.Params.mailmunchid }}" async="async"></script>
+{{ end }}
+{{ if isset .Site.Params "sumomeid" }}
+<!-- sumome -->
+<script src="//load.sumome.com/" data-sumo-site-id="{{ .Site.Params.sumomeid }}" async="async"></script>
+{{ end }}
 <script src="{{ "/js/jquery.min.js" | absURL }}"></script>
 <script src="{{ "/js/bootstrap.min.js" | absURL }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>

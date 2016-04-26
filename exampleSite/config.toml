@@ -47,6 +47,7 @@ disqusShortname = "shortname"
     name = "paper"
 
 [params.popover]
+    # This is a highly configurable popover form
     enablepopover = true #enable or disable popover: true/false.
     posturl = "https://zapier.com/hooks/catch/1227563/" # Your zapier post hook.
     headerimage = "//placehold.it/1000x600"
@@ -75,6 +76,9 @@ disqusShortname = "shortname"
     # Default (if omitted) is "Home".
     home = "home"
 
+    mailmunchid = "" # Mailmunch site id
+    sumomeid = "" # Sumome id
+
 	   # Show a sidebar menu
     showRightSidebar = true
     # Select a syntax highlight.
@@ -88,7 +92,7 @@ disqusShortname = "shortname"
     github = "Myprofile" # Your Github profile ID
     bitbucket = "" # Your Bitbucket profile ID
     linkedin = "" # Your LinkedIn profile ID (from public URL)
-    googleplus = "+Myprofile" # Your Google+ profile ID
+    googleplus = "Myprofile" # Your Google+ profile ID
     facebook = "Myprofile" # Your Facebook profile ID
     twitter = "Myprofile" # Your Twitter profile ID
     youtube = ""  # Your Youtube channel ID
