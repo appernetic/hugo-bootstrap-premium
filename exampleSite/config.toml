@@ -47,7 +47,7 @@ disqusShortname = "shortname"
     name = "paper"
 
 [params.popover]
-    # This is a highly configurable popover form
+    # This is a highly configurable popover form.
     enablepopover = true #enable or disable popover: true/false.
     posturl = "https://zapier.com/hooks/catch/1227563/" # Your zapier post hook.
     headerimage = "//placehold.it/1000x600"

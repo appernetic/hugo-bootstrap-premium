@@ -140,6 +140,7 @@ disqusShortname = "your_disqus_shortname"
   name = "paper"
 
 [params.popover]
+  # This is a highly configurable popover form.
   enablepopover = false #enable or disable popover: true/false.
   posturl = "https://zapier.com/hooks/..."
   headerimage = "//placehold.it/1000x600"
@@ -170,6 +171,9 @@ disqusShortname = "your_disqus_shortname"
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
     home = "home"
+
+    mailmunchid = "" # Mailmunch site id
+    sumomeid = "" # Sumome id
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
@@ -255,6 +259,10 @@ In static/js/popover/ you will find a minified and a un-minified version of popo
 
 * If the POST url is wrong you will not get the error message in the popover. Instead you get a success message or only an error in the browser console such as: XMLHttpRequest cannot load https://zapier.com/hooks/. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://preview.appernetic.io' is therefore not allowed access. The response had HTTP status code 404.
 * And yes, it works on GitHub Pages if you have the correct Zapier hook!
+
+## Sumome and MailMunch forms
+
+You can use the theme with both SumoMe and MailMunch by adding the respective id's. If you use MailMunch it is easy to have it send your subscribers to MailChimp.
 
 ## Tips
 
