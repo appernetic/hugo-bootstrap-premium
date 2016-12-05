@@ -35,6 +35,12 @@ vertical-align: baseline;;
 .navbar-brand-img {
 padding: 0;
 }
+@media screen and (max-width: 768px) {
+    a.navbar-brand-img>img {
+      vertical-align: bottom;
+      padding-left: 20px;
+    }
+}
 
 a.navbar-brand-img>img {
   vertical-align: bottom;

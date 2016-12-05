@@ -5,16 +5,16 @@
 
 <!-- selection of themed bootstrap css to load-->
 {{ if isset .Site.Params "theme" }}
-    <link rel="stylesheet" href="{{ "/css/bootswatch/" | absURL }}{{ .Site.Params.theme.name }}{{ "/bootstrap.min.css" }}">
+    <link rel="stylesheet" href="{{ "css/bootswatch/" | absURL }}{{ .Site.Params.theme.name }}{{ "/bootstrap.min.css" }}">
 {{ else}}
-    <link rel="stylesheet" href="{{ "/css/bootswatch/default/bootstrap.min.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "css/bootswatch/default/bootstrap.min.css" | absURL }}">
 {{ end }}
 
-<link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | absURL }}">
-<link rel="stylesheet" href="{{ "/css/style.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/font-awesome.min.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 
 {{ if isset .Site.Params "highlight" }}
-  <link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">
+  <link rel="stylesheet" href="{{ "css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">
 {{ else }}
-  <link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}default.css">
+  <link rel="stylesheet" href="{{ "css/highlight/" | absURL }}default.css">
 {{ end }}

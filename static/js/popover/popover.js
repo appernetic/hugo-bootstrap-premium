@@ -1,9 +1,15 @@
 angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
 .config(
-  ['$httpProvider',
-  function ($httpProvider) {
+  ['$httpProvider', '$locationProvider',
+  function ($httpProvider, $locationProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    // use the HTML5 History API
+    //$locationProvider.html5Mode(true);
+    /*$locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+});*/
   }])
   .service('toggleServices', function () {
     // this is to avoid the popover from showing again when it's already triggered.

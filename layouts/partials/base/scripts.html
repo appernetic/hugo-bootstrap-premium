@@ -6,8 +6,8 @@
 <!-- sumome -->
 <script src="//load.sumome.com/" data-sumo-site-id="{{ .Site.Params.sumomeid }}" async="async"></script>
 {{ end }}
-<script src="{{ "/js/jquery.min.js" | absURL }}"></script>
-<script src="{{ "/js/bootstrap.min.js" | absURL }}"></script>
+<script src="{{ "js/jquery.min.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap.min.js" | absURL }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="/js/popover/angular-storage.min.js"></script>
 
@@ -23,11 +23,16 @@
     dsq.src = '//{{ . }}.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
+  $('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});
 </script>
 {{ end }}
 
-<script src="{{ "/js/highlight.pack.js" | absURL }}"></script>
-<script src="{{ "/js/site.js" | absURL }}"></script>
+<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
+<script src="{{ "js/site.js" | absURL }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 {{ with .Site.Params.googleAnalytics }}
