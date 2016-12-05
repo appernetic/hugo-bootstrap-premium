@@ -284,7 +284,7 @@ You can use the theme with both SumoMe and MailMunch by adding the respective id
 
 ## Nown bugs
 
-* Header image has no left margin in mobile devices.
+* No known bugs.
 
 ## Changes and enhancements by [Murali Rath](https://github.com/mmrath/hugo-bootstrap/) from the original theme
 * Modified to work with bootstrap and bootswatch
