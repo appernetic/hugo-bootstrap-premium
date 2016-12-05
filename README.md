@@ -282,7 +282,7 @@ You can use the theme with both SumoMe and MailMunch by adding the respective id
 * Added exampleSite folder.
 * Added correct image links to images in the README file.
 
-## Nown bugs
+## Known bugs
 
 * No known bugs.
 
