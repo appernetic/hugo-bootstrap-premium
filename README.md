@@ -1,6 +1,6 @@
 hugo-bootstrap-premium
 ======================
-A theme with bootstrap, bootswatch(optional), font-awesome, highlightjs, popover opt-in form (optional), MailMunch (optional) and SumoMe (optional).
+A theme with multilingual themes support, bootstrap, bootswatch(optional), font-awesome, highlightjs, popover opt-in form (optional), MailMunch (optional) and SumoMe (optional).
 
 *NOTE: This theme is copied from Hyde-Y. Not everything is ported to bootstrap.
 Feel free to make changes and open pull requests.*
@@ -91,20 +91,27 @@ An example of what your site's `config.toml` could look like. All theme-specific
 
 ``` toml
 # hostname (and path) to the root eg. http://spf13.com/
-baseurl = "/" # In most cases this will work.
+baseurl = "/"
 
-# Site title
-title = "sitename"
+DefaultContentLanguage = "en"
+
+# If you want all of the languages to be put below their respective language code,
+# enable DefaultContentLanguageInSubdir = true. Without enabling it english content
+# will be in the root and other languages in their respective subfolder such as /sv/.
+# See [Languages] settings at the end of this file.
 
 # Copyright
-copyright = "(c) 2015 yourname."
+copyright = "(c) 2016 yourname."
 
 # Language
-languageCode = "en-EN"
+languageCode = "en"
+
+# SES friendly url:s
+canonifyurls = true
 
 # Metadata format
 # "yaml", "toml", "json"
-metaDataFormat = "yaml"
+metaDataFormat = "toml"
 
 # Theme to use (located in /themes/THEMENAME/)
 theme = "hugo-bootstrap-premium"
@@ -201,38 +208,143 @@ disqusShortname = "your_disqus_shortname"
     extensions = []
     extensionmask = []
 
+    # Menus
+    # If you want active menu items highlighted for internal pages don't add them here, they need to be added in each files front matter.
+    # like this:
+    #[menu]
+    #     [menu.main]
+    #        name = "Showcase"
+    #        weight = 3
+    #        identifier = "showcase"
+
+    [Languages]
+    [Languages.en]
+    weight = 1
+    copyright = "(c) 2016 Copyright my blog"
+    title = "My blog" # Site title
+    [[Languages.en.menu.main]]
+    name = "Blog"
+    pre = ""
+    weight = 2
+    identifier = "post"
+    url = "/post/"
+
+    [[Languages.en.menu.main]]
+    name = "About"
+    weight = 1
+    identifier = ""
+    url = "https://appernetic.io/app/#/about"
+    pre = "<i class='fa fa-road'></i>"
+
+    [[Languages.en.menu.main]]
+    name = "Dashboard"
+    identifier = ""
+    weight = 3
+    url = "https://appernetic.io/app/"
+
+    [[Languages.en.menu.footer]] # add  links to the bottom right corner.
+    name = "Disclaimer"
+    pre = "<i>&middot;</i>"
+    identifier = "disclaimer"
+    weight = 1
+    url = "/disclaimer/"
+
+    [[Languages.en.menu.footer]]
+    name = "Terms"
+    identifier = "terms"
+    weight = 2
+    url = "/terms/"
+
+    [Languages.sv]
+    weight = 2
+    title = "Min blog" # Site title
+    copyright = "(c) 2016 Alla rättigheter"
+
+    [[Languages.sv.menu.main]]
+    name = "Bloggen"
+    pre = ""
+    weight = 2
+    identifier = "post"
+    url = "/sv/post/"
+
+    [[Languages.sv.menu.footer]] # add  links to the bottom right corner.
+    name = "Ansvarsfriskrivning"
+    pre = "<i>&middot;</i>"
+    identifier = "friskrivning"
+    weight = 1
+    url = "/sv/friskrivning/"
+
+    [[Languages.sv.menu.footer]]
+    name = "Vilkor"
+    identifier = "vilkor"
+    weight = 2
+    url = "/sv/vilkor/"
+
+
+    [Languages.sv.taxonomies]
+    tag = "Taggar"
+    topic = "Ämne"
+
+
+
 ```
 
 ### Menu
 
-Create `data/Menu.toml` to configure the top menu navigation links. Example below.
+Add menu items in `config.toml` to configure the top menu navigation links. Example below.
 
 ```toml
-[about]
-    Name = "About"
-    IconClass = "fa-info-circle"
-    URL = "/about"
 
-[posts]
-    Name = "Posts"
-    Title = "Show list of posts"
-    URL = "/post"
+[[menu.main]]
+name = "Blog"
+pre = ""
+weight = 1
+identifier = "post"
+url = "/post/"
 
-[tags]
-    Name = "Tags"
-    Title = "Show list of tags"
-    URL = "/tags"
+# Example of link in Swedish
+[[Languages.sv.menu.main]]
+name = "Blogg"
+pre = ""
+weight = 2
+identifier = "post"
+url = "/post/"
+
 ```
 
-### Foot menu
+### Footer menu
 
-Create `data/FootMenu.toml` to configure the footer navigation links. Example below.
+Add footer menu items in `config.toml` to configure the footer navigation links. Example below.
 
 ```toml
-[license]
-    Name = "license"
-    URL = "/license"
+
+[[Languages.en.menu.footer]] # add  links to the bottom right corner.
+name = "Disclaimer"
+pre = "<i>&middot;</i>"
+identifier = "disclaimer"
+weight = 1
+url = "/disclaimer/"
+
+[[Languages.sv.menu.footer]] # add  links to the bottom right corner.
+name = "Ansvarsfriskrivning"
+pre = "<i>&middot;</i>"
+identifier = "friskrivning"
+weight = 1
+url = "/sv/friskrivning/"
+
+[[Languages.sv.menu.footer]]
+name = "Vilkor"
+identifier = "vilkor"
+weight = 2
+url = "/sv/vilkor/"
 ```
+
+## Multilingual Themes support
+Implemented is multilingual support based on the article [multilingual themes support](http://gohugo.io/content/multilingual/#multilingual-themes-support).
+
+i18n bundles is located in themes/hugo-bootstrap-premium/i18n/
+
+I have created en.yaml and sv.yaml bundles.
 
 ## Popover e-mail subscription opt-in form
 
@@ -253,7 +365,7 @@ In static/js/popover/ you will find a minified and a un-minified version of popo
 
 * I couldn't use uibModalInstance. Somehow dots is escaped in variables that are between script tags in Hugo compiled html files. So it was not possible to pass url's from the config file to the angular app. Possible not tested workaround for uib modal is to use: {{ .Site.Params.popover.posturl | safeJS }}
 * I had to use angular-modal-service and couldn't get animation to work. So therefore no animations!
-* I could only get $location.absUrl() to work in Angular so I had to do my own function to make the modal to work in the preview (in Appernetic).
+* I could only get $location.absLangURL() to work in Angular so I had to do my own function to make the modal to work in the preview (in Appernetic).
 
 ### Bugs
 
@@ -274,6 +386,9 @@ You can use the theme with both SumoMe and MailMunch by adding the respective id
 
 ## Changes and enhancements by Appernetic from the [Murali Rath](https://github.com/mmrath/hugo-bootstrap/) theme version
 
+* Added multilingual themes support.
+* Moved footer menu data to the config file.
+* Added menu support based on Hugo conventions.
 * Added popover e-mail subscription opt-in form.
 * Added Sumome and MailMunch forms.
 * Added more space between top menu and content.

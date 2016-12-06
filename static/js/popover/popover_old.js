@@ -1,9 +1,15 @@
 angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
 .config(
-  ['$httpProvider',
-  function ($httpProvider) {
+  ['$httpProvider', '$locationProvider',
+  function ($httpProvider, $locationProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    // use the HTML5 History API
+    //$locationProvider.html5Mode(true);
+    /*$locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+});*/
   }])
   .service('toggleServices', function () {
     // this is to avoid the popover from showing again when it's already triggered.
@@ -20,7 +26,7 @@ angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
   .controller("MyController", function($scope, $timeout, toggleServices, store, isMobile, ModalService, $location) {
     var modalSize = MODAL_SIZE;
     var cookieName = COOKIE_NAME;
-    var absUrl = $location.absUrl();
+    var absLangURL = $location.absLangURL();
     if (isMobile.phone) {
       modalSize = "lg"; // large modal for phones!
     }
@@ -49,7 +55,7 @@ angular.module("myapp", ['angular-storage','ismobile','angularModalService'])
         hash: parser.hash
       };
     };
-    var pathobj = parseURL(absUrl);
+    var pathobj = parseURL(absLangURL);
     var thepath = pathobj.pathname.split('/');
     // Get initial value
     $scope.Data = toggleServices.getAll();

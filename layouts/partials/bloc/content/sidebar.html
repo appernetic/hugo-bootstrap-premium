@@ -7,7 +7,7 @@
     {{ end }}
 
     <div class="section">
-      <header><div class="title"><b>Latest Posts</b></div></header>
+      <header><div class="title"><b>{{ i18n "latestposts" }}</b></div></header>
       <div class="content">
         <ul>
         {{ range first 10 (where .Site.Pages "Type" "post") }}
@@ -27,7 +27,7 @@
 
         <div class="content">
           <ul>
-            {{ range first 10 $value.ByCount }}<li><a href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
+            {{ range first 10 $value.ByCount }}<li><a href="{{$.LanguagePrefix }}/{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
           </ul>
         </div>
       </div>

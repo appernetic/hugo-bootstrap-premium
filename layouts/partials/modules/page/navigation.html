@@ -4,7 +4,7 @@
     {{ if .PrevInSection }}
         <li class="previous">
           <a href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
-            <span aria-hidden="true">&larr;</span>{{ .Site.Data.Strings.previous }}
+            <span aria-hidden="true">&larr;</span>{{ i18n "previous" }}
           </a>
         </li>
     {{end}}
@@ -12,7 +12,7 @@
     {{ if .NextInSection }}
       <li class="next">
         <a href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
-            {{ .Site.Data.Strings.next }} <span aria-hidden="true">&rarr;</span>
+            {{ i18n "next" }} <span aria-hidden="true">&rarr;</span>
         </a>
       </li>
     {{end}}

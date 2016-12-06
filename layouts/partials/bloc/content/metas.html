@@ -2,10 +2,10 @@
 {{ partial "modules/page/date" . }}
 {{ if .IsPage }}
   <small>{{ with .Params.author }}
-    &middot; {{ $.Site.Data.Strings.byauthor }} {{ . }}
+    &middot; {{ i18n "byauthor" }} {{ . }}
   {{ end }}
-  &middot; {{ .Site.Data.Strings.metaReadin }} {{ .ReadingTime }} {{ .Site.Data.Strings.metaReadinMinutes }}
-  &middot; ({{ .WordCount }} {{ .Site.Data.Strings.words }})
+  &middot; {{ i18n "readinabout" . }}
+  &middot; ({{ i18n "words" . }})
 </small>
 
 {{ end }}

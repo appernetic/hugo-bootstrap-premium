@@ -1,0 +1,16 @@
+- id: next
+  translation: "Nästa"
+- id: previous
+  translation: "Föregående"
+- id: backtotop
+  translation: "Till toppen"
+- id: readmore
+  translation: "Läs mer"
+- id: byauthor
+  translation: "av"
+- id: readinabout
+  translation: "Läs på {{ .ReadingTime }} min"
+- id: words
+  translation: "{{ .WordCount }} ord"
+- id: latestposts
+  translation: "Senaste artiklarna"

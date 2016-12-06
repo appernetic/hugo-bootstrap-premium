@@ -1,0 +1,16 @@
+- id: next
+  translation: "Next"
+- id: previous
+  translation: "Previous"
+- id: backtotop
+  translation: "back to top"
+- id: readmore
+  translation: "Read more"
+- id: byauthor
+  translation: "by"
+- id: readinabout
+  translation: "Read in about {{ .ReadingTime }} min"
+- id: words
+  translation: "{{ .WordCount }} words"
+- id: latestposts
+  translation: "Latest Posts"
