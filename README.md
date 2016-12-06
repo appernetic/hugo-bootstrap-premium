@@ -101,9 +101,6 @@ DefaultContentLanguage = "en"
 # will be in the root and other languages in their respective subfolder such as /sv/.
 # See [Languages] settings at the end of this file.
 
-# Copyright
-copyright = "(c) 2016 yourname."
-
 # Language
 languageCode = "en"
 
