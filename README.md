@@ -73,12 +73,13 @@ This theme expects a relatively standard Hugo blog/personal site layout:
 └── content
     ├── post
     |   ├── post1.md
-    |   └── post2.md
+    |   └── post2.sv.md // format for language specific files.
     ├── code
     |   ├── project1.md
     |   ├── project2.md
-    ├── license.md        // this is used in the sidebar footer link
+    ├── exempel.sv.md  // format for language specific files.
     └── other_page.md
+
 ```
 
 Just run `hugo --theme=hugo-bootstrap-premium` to generate your site!
@@ -303,6 +304,7 @@ identifier = "post"
 url = "/post/"
 
 # Example of link in Swedish
+[Languages.sv]
 [[Languages.sv.menu.main]]
 name = "Blogg"
 pre = ""
@@ -318,6 +320,7 @@ Add footer menu items in `config.toml` to configure the footer navigation links.
 
 ```toml
 
+[Languages.en]
 [[Languages.en.menu.footer]] # add  links to the bottom right corner.
 name = "Disclaimer"
 pre = "<i>&middot;</i>"
@@ -325,6 +328,7 @@ identifier = "disclaimer"
 weight = 1
 url = "/disclaimer/"
 
+[Languages.sv]
 [[Languages.sv.menu.footer]] # add  links to the bottom right corner.
 name = "Ansvarsfriskrivning"
 pre = "<i>&middot;</i>"
