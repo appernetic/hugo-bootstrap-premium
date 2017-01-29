@@ -81,7 +81,7 @@ mailmunchid = "" # Mailmunch site id
 sumomeid = "" # Sumome id
 
 # Show a sidebar menu
-showRightSidebar = true
+showrightsidebar = true
 # Select a syntax highlight.
 # Check the static/css/highlight directory for options.
 highlight = "default"
