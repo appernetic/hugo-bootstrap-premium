@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
         </button>
         {{ if and ( ne .Site.Title "" ) ( eq .Site.Params.BrandImage "" )}}
-        <a class="navbar-brand" href="{{.LanguagePrefix }}">
+        <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL}}">
           {{ .Site.Title }}
           {{ end }}
           {{ if ( ne .Site.Params.BrandImage "" ) }}
