@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 author = "author"
 keywords = [
   "Svenska",
@@ -9,9 +9,8 @@ keywords = [
   "Ämne 1",
 ]
 date = "2016-12-05T12:29:19+01:00"
-title = "Test"
+title = "Introduktion"
 type = "post"
-description = "description"
 taggar = [
   "Ett",
   "Två",

@@ -67,6 +67,8 @@ errormessage = "Submitting form failed!"
 optin = true #opt-in: true/false
 
 [params]
+# menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
+switchlang = false
 # You can use markdown here.
 BrandImage = "http://blog.appernetic.io/images/apperneticlogo.png" #top header brand image.
 brand = "My awsome blog" # brand image alt text.
@@ -116,6 +118,13 @@ extensionmask = []
 #        name = "Showcase"
 #        weight = 3
 #        identifier = "showcase"
+# i18n menus. A menu will be added for each language to the right in the top menu. This menu will switch to the selected language. Remember to add the corresponding language in pathnamereplace.js.
+#[[Languages.sv.menu.switchlang]]
+#  name = "English"
+#  identifier = ""
+#  weight = 4
+#  url = "en"
+
 
 [Languages]
 [Languages.en]

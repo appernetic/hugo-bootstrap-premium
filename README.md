@@ -164,6 +164,9 @@ disqusShortname = "your_disqus_shortname"
   optin = true #opt-in: true/false
 
 [params]
+    # menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
+    switchlang = false
+
     # You can use markdown here.
     BrandImage = "http://blog.appernetic.io/images/apperneticlogo.png" #top header brand image.
     brand = "Appernetic blog" # brand image alt text.
@@ -214,6 +217,12 @@ disqusShortname = "your_disqus_shortname"
     #        name = "Showcase"
     #        weight = 3
     #        identifier = "showcase"
+    # i18n menus. A menu will be added for each language to the right in the top menu. This menu will switch to the selected language. Remember to add the corresponding language in pathnamereplace.js.
+    #[[Languages.sv.menu.switchlang]]
+    #  name = "English"
+    #  identifier = ""
+    #  weight = 4
+    #  url = "en"
 
     [Languages]
     [Languages.en]
@@ -346,6 +355,26 @@ Implemented is multilingual support based on the article [multilingual themes su
 i18n bundles is located in themes/hugo-bootstrap-premium/i18n/
 
 I have created en.yaml and sv.yaml bundles.
+
+## Redirect for languages
+A visitor can manually change language if you enable switchlang = true in the [params] section in the config file and also enable DefaultContentLanguageInSubdir = true. Then add a menu section for each language like this in the config file:
+
+```
+[[Languages.en.menu.switchlang]]
+name = "Svenska"
+identifier = ""
+weight = 4
+url = "sv"
+
+[[Languages.sv.menu.switchlang]]
+  name = "English"
+  identifier = ""
+  weight = 4
+  url = "en"
+```   
+This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md.
+
+If the visitor switch language when on a blog post we redirect to respective /post/ sub dir.
 
 ## Popover e-mail subscription opt-in form
 

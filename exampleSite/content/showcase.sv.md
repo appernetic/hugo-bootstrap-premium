@@ -1,9 +1,10 @@
 +++
 
 date = "2016-12-05T14:41:00+01:00"
-title = "Exempel"
+title = ""
 author = "author"
-draft = true
+draft = false
+type = "page"
 [menu]
      [menu.main]
         name = "Exempel"
@@ -13,4 +14,4 @@ draft = true
 
 # Exempel
 
-Exempel text på svenska.
+Exempel text på svenska för Showcase.

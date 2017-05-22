@@ -30,6 +30,18 @@
               </a>
             </li>
             {{ end }}
+            <!-- switch language -->
+            {{ if eq .Site.Params.switchlang true }}
+            {{ $currentNode := . }}
+            {{ range .Site.Menus.switchlang }}
+            <li class="{{if $currentNode.IsMenuCurrent "main" . }}active{{end}}">
+              <a href="javascript:changeLanguage('{{ .URL | markdownify }}');" {{ if and ( isset . "Name" ) ( ne .Name "" ) }} title="{{ .Name }}"{{ end }}>
+                {{ .Pre }}
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+            {{ end }}  
           </ul>
         </div>
         <!--/.nav-collapse -->

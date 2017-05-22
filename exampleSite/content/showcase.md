@@ -1,10 +1,10 @@
 +++
 
 date = "2016-12-05T14:41:00+01:00"
-title = "Showcase"
+title = ""
 author = "author"
-draft = true
-
+draft = false
+type = "page"
 [menu]
      [menu.main]
         name = "Showcase"
