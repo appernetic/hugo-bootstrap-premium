@@ -1,8 +1,8 @@
-{{ if .Site.Params.mailmunchid }}
+{{ if ne .Site.Params.mailmunchid "" }}
 <!-- MailMunch  -->
 <script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="{{ .Site.Params.mailmunchid }}" async="async"></script>
 {{ end }}
-{{ if .Site.Params.sumomeid }}
+{{ if ne .Site.Params.sumomeid "" }}
 <!-- sumome -->
 <script src="//load.sumome.com/" data-sumo-site-id="{{ .Site.Params.sumomeid }}" async="async"></script>
 {{ end }}

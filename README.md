@@ -164,7 +164,10 @@ disqusShortname = "your_disqus_shortname"
   optin = true #opt-in: true/false
 
 [params]
-    # menu for changing language. This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
+    # menu for changing language. This changes languages with js and stores the choice with the help
+    # of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the
+    # md files needs to have the same name for each language abbreviation to work correctly. Example:
+    # showcase.en.md and showcase.sv.md. It only works if DefaultContentLanguageInSubdir = true
     switchlang = false
 
     # You can use markdown here.
