@@ -413,7 +413,7 @@ You can use the theme with both SumoMe and MailMunch by adding the respective id
 
 Thanks to dselivanov, this theme now has support for MathJax.
 
-With this setup, everything is in place for a natural usage of MathJax on pages generated using Hugo. In order to include inline mathematics, just put LaTeX code in between `$ TeX Code $` or `\( TeX Code \)`. To include display style mathematics, just put LaTeX code in between <div>$$TeX Code$$</div>. All the math will be properly typeset and displayed within your Hugo generated web page! You might have to tweak the CSS to have it adopted to your style.
+With this setup, everything is in place for a natural usage of MathJax on pages generated using Hugo. In order to include inline mathematics, just put LaTeX code in between ``` `$ TeX Code $` or `\( TeX Code \)` ```. To include display style mathematics, just put LaTeX code in between ``` <div>$$TeX Code$$</div> ```. All the math will be properly typeset and displayed within your Hugo generated web page! You might have to tweak the CSS to have it adopted to your style.
 
 Read more about the [MathJax implementation](https://gohugo.io/tutorials/mathjax/).
 
