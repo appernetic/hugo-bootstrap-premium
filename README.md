@@ -1,6 +1,6 @@
 hugo-bootstrap-premium
 ======================
-A theme with multilingual themes support, bootstrap, bootswatch(optional), font-awesome, highlightjs, popover opt-in form (optional), MailMunch (optional) and SumoMe (optional).
+A theme with multilingual themes support, bootstrap, bootswatch(optional), mathjax, font-awesome, highlightjs, popover opt-in form (optional), MailMunch (optional) and SumoMe (optional).
 
 *NOTE: This theme is copied from Hyde-Y. Not everything is ported to bootstrap.
 Feel free to make changes and open pull requests.*
@@ -408,6 +408,14 @@ In static/js/popover/ you will find a minified and a un-minified version of popo
 ## Sumome and MailMunch forms
 
 You can use the theme with both SumoMe and MailMunch by adding the respective id's. If you use MailMunch it is easy to have it send your subscribers to MailChimp.
+
+## MathJax support
+
+Thanks to dselivanov, this theme now has support for MathJax.
+
+With this setup, everything is in place for a natural usage of MathJax on pages generated using Hugo. In order to include inline mathematics, just put LaTeX code in between `$ TeX Code $` or `\( TeX Code \)`. To include display style mathematics, just put LaTeX code in between <div>$$TeX Code$$</div>. All the math will be properly typeset and displayed within your Hugo generated web page! You might have to tweak the CSS to have it adopted to your style.
+
+Read more about the [MathJax implementation](https://gohugo.io/tutorials/mathjax/).
 
 ## Tips
 
