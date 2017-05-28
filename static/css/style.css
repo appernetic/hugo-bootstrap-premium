@@ -88,3 +88,8 @@ iframe {
 }
 #Email.fieldInvalid {
   border: 1px solid #ff0000;
+  
+code.has-jax {font: inherit;
+  font-size: 100%;
+  background: inherit;
+  border: inherit;}
