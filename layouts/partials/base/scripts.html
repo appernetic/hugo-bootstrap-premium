@@ -71,9 +71,12 @@ CONTENTLANGUAGE = {{ .Site.Params.DefaultContentLanguage }}; // used in pathname
 <script src="/js/popover/angular-modal-service.min.js"></script>
 <script src="/js/angular-ismobile.min.js"></script>
 <script src="/js/popover/popover.min.js"></script>
+
+{{ if ne .Site.Params.mathjax "" }}
 <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/{{.Site.Params.mathjax}}/MathJax.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/{{.Site.Params.mathjax}}/config/TeX-AMS-MML_HTMLorMML.js"></script>
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -97,3 +100,4 @@ MathJax.Hub.Config({
     }
 });
 </script>
+{{ end }}
