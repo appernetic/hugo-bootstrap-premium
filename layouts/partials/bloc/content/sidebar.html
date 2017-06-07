@@ -10,7 +10,7 @@
       <header><div class="title"><b>{{ i18n "latestposts" }}</b></div></header>
       <div class="content">
         <ul>
-        {{ range first 10 (where .Site.Pages "Type" "post") }}
+        {{ range first 10 (where .Data.Pages "Type" "post") }}
           <li>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
           </li>
