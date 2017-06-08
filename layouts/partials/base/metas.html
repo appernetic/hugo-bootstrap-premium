@@ -46,6 +46,7 @@
 <meta name="twitter:domain" content="{{ .Site.BaseURL }}">
   {{ end }}
 
+  {{ if ne .Site.Params.googleplus "" }}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -60,6 +61,7 @@
     "wordCount": {{ .WordCount }}
   }
 </script>
+  {{ end }}
 {{ end }}
 
 {{ if .RSSLink }}
