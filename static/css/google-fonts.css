@@ -1,0 +1,17 @@
+/* source:
+  - https://google-webfonts-helper.herokuapp.com/fonts/open-sans?subsets=greek-ext,cyrillic,latin-ext,latin,vietnamese,cyrillic-ext,greek
+  - https://github.com/majodev/google-webfonts-helper
+*/
+/* open-sans-regular - greek_cyrillic-ext_vietnamese_latin_latin-ext_cyrillic_greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/open-sans-v13-greek_cyrillic-ext_vietnamese_latin_latin-ext_cyrillic_greek-ext-regular.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('OpenSans'),
+       url('../fonts/open-sans-v13-greek_cyrillic-ext_vietnamese_latin_latin-ext_cyrillic_greek-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/open-sans-v13-greek_cyrillic-ext_vietnamese_latin_latin-ext_cyrillic_greek-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/open-sans-v13-greek_cyrillic-ext_vietnamese_latin_latin-ext_cyrillic_greek-ext-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/open-sans-v13-greek_cyrillic-ext_vietnamese_latin_latin-ext_cyrillic_greek-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/open-sans-v13-greek_cyrillic-ext_vietnamese_latin_latin-ext_cyrillic_greek-ext-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
