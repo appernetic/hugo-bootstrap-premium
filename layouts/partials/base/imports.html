@@ -13,6 +13,10 @@
 <link rel="stylesheet" href="{{ "css/font-awesome.min.css" | absURL }}">
 <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 
+{{ range .Site.Params.customCSS }}
+<link rel="stylesheet" href="{{ . | absURL}}">
+{{ end }}
+
 {{ if isset .Site.Params "highlight" }}
   <link rel="stylesheet" href="{{ "css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">
 {{ else }}

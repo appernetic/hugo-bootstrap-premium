@@ -78,6 +78,9 @@ brand = "My awsome blog" # brand image alt text.
 topline = "few words about your site"
 footline = "code with <i class='fa fa-heart'></i>"
 
+customJS = []
+customCSS = ["/css/style_custom.css"]
+
 # Text for the top menu link, which goes to the root URL for the site.
 # Default (if omitted) is "Home".
 home = "home"
