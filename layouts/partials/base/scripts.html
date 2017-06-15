@@ -80,3 +80,6 @@ MathJax.Hub.Config({
 });
 </script>
 {{ end }}
+{{ range .Site.Params.customJS }}
+<script type="text/javascript" src="{{ . | absURL}}"></script>
+{{ end }}
