@@ -6,10 +6,11 @@
   {{ end }}
   &middot; {{ i18n "readinabout" . }}
   &middot; ({{ i18n "words" . }})
-</small>
-
+  &middot; {{ partial "bloc/content/sharing" . }}
+  </small>
 {{ end }}
 <div class="margin-10">{{ partial "modules/page/tags" . }}
 </div>
+
 <br>
 </div>
