@@ -89,8 +89,27 @@ iframe {
 }
 #Email.fieldInvalid {
   border: 1px solid #ff0000;
-  
-code.has-jax {font: inherit;
+}  
+code.has-jax {
+  font: inherit;
   font-size: 100%;
   background: inherit;
-  border: inherit;}
+  border: inherit;
+  }
+
+
+.share-box a{
+    padding: 0 0 0 5px;
+}
+
+.fa-facebook-official { color: #3b5998; }
+
+.fa-google-plus { color: #d34836; }
+
+.fa-linkedin { color: #0077b5; }
+
+.fa-envelop { color: #444444; }
+
+.fa-reddit { color: #ff5700; }
+
+.fa-twitter { color: #4099FF; }
