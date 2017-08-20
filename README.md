@@ -122,8 +122,8 @@ paginatePath = "page"
 disqusShortname = "your_disqus_shortname"
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
-    code = "/:slug/"
+    post = "/:year/:month/:day/:filename/"
+    code = "/:filename/"
 
 [taxonomies]
     tag = "tags"
