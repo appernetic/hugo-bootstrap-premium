@@ -13,13 +13,10 @@ body {
 }
 .footer {
   position: absolute;
-  bottom: 0;
-  //margin-top: 3rem;
+  bottom: -5%;
   width: 100%;
   text-align: left;
-  //margin-top: 20px;
   padding-bottom: 1rem;
-//  padding-top: 1rem;
 }
 
 
