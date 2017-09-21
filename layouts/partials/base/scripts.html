@@ -11,8 +11,10 @@
 {{ if eq .Site.Params.switchlang true }}
 <script src="{{ "js/js.cookie.js" | absURL }}"></script>
 {{ end }}
+{{ if eq .Site.Params.popover.enablepopover true}}
 <script src="{{ "js/angular.min.js" | absURL }}"></script>
 <script src="/js/popover/angular-storage.min.js"></script>
+{{ end }}
 <script src="{{ "js/highlight.pack.js" | absURL }}"></script>
 <script src="{{ "js/site.js" | absURL }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -47,9 +49,12 @@ CONTENTLANGUAGE = {{ .Site.Params.DefaultContentLanguage }}; // used in pathname
 {{ if eq .Site.Params.switchlang true }}
 <script src="{{ "js/pathnamereplace.js" | absURL }}"></script>
 {{ end }}
+
+{{ if eq .Site.Params.popover.enablepopover true }}
 <script src="/js/popover/angular-modal-service.min.js"></script>
 <script src="/js/angular-ismobile.min.js"></script>
 <script src="/js/popover/popover.min.js"></script>
+{{ end }}
 
 {{ if ne .Site.Params.mathjax "" }}
 <script type="text/javascript"
