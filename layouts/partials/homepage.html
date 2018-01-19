@@ -2,8 +2,8 @@
     {{ if .Site.Params.showBlogHeader }}
       <div class="row">
         <header>
-          {{ partial "bloc/content/h1-title" . }}
-          {{ partial "bloc/content/lastupdate" . }}
+          {{ partial "bloc/content/h1-title.html" . }}
+          {{ partial "bloc/content/lastupdate.html" . }}
         </header>
       </div>
     {{ end }}
@@ -13,11 +13,11 @@
         {{ range $paginator.Pages }}
           {{ .Render "summary" }}
         {{ end }}
-        {{ partial "bloc/content/pagination" . }}
+        {{ partial "bloc/content/pagination.html" . }}
       </div>
       {{ if .Site.Params.showRightSidebar }}
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-          {{ partial "bloc/content/sidebar" . }}
+          {{ partial "bloc/content/sidebar.html" . }}
         </div>
       {{ end }}
     </div>

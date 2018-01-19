@@ -1,15 +1,15 @@
 <div class="metas">
-{{ partial "modules/page/date" . }}
+{{ partial "modules/page/date.html" . }}
 {{ if .IsPage }}
   <small>{{ with .Params.author }}
     &middot; {{ i18n "byauthor" }} {{ . }}
   {{ end }}
   &middot; {{ i18n "readinabout" . }}
   &middot; ({{ i18n "words" . }})
-  &middot; {{ partial "bloc/content/sharing" . }}
+  &middot; {{ partial "bloc/content/sharing.html" . }}
   </small>
 {{ end }}
-<div class="margin-10">{{ partial "modules/page/tags" . }}
+<div class="margin-10">{{ partial "modules/page/tags.html" . }}
 </div>
 
 <br>
