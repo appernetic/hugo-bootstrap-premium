@@ -6,8 +6,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
-  {{ partial "base/metas" . }}
-  {{ partial "base/imports" . }}
+  {{ partial "base/metas.html" . }}
+  {{ partial "base/imports.html" . }}
 </head>
 <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }} data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
-    {{ partial "base/header" . }}
+    {{ partial "base/header.html" . }}

@@ -1,7 +1,7 @@
-{{ partial "head" . }}
+{{ partial "head.html" . }}
 <section id="main-content" class="container main_content terms topic">
   <header class="container">
-    {{ partial "bloc/content/h1-title" . }}
+    {{ partial "bloc/content/h1-title.html" . }}
   </header>
   {{ $baseurl := .Site.BaseURL }}
   {{ $data := .Data }}
@@ -20,4 +20,4 @@
   </article>
   {{ end }}
 </section>
-{{ partial "foot" . }}
+{{ partial "foot.html" . }}

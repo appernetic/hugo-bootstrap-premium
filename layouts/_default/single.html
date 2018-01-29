@@ -1,4 +1,4 @@
-{{ partial "head" . }}
+{{ partial "head.html" . }}
 <div class="container">
   <div class="row">
     <div class="col-sm-{{ if .Site.Params.showRightSidebar }}9{{ else }}12{{ end }}">
@@ -8,9 +8,9 @@
     </div>
     {{ if .Site.Params.showRightSidebar }}
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        {{ partial "bloc/content/sidebar" .}}
+        {{ partial "bloc/content/sidebar.html" .}}
       </div>
     {{ end }}
   </div>
 </div>
-{{ partial "foot" . }}
+{{ partial "foot.html" . }}
