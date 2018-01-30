@@ -1,4 +1,4 @@
-hugo-bootstrap-premium
+Hugo-bootstrap-premium
 ======================
 A theme with multilingual themes support, bootstrap, bootswatch(optional), mathjax, font-awesome, highlightjs, popover opt-in form (optional), MailMunch (optional) and SumoMe (optional).
 
@@ -137,13 +137,6 @@ disqusShortname = "your_disqus_shortname"
 # All parameters below here are optional and can be mixed and matched.
 #
 
-# bootswatch theme name, unmark and select one: cerulean, cosmo, cyborg, darkly,
-# default, flatly, journal,  lumen, paper, readable, sandstone, simplex,
-# slate, spacelab, superhero, united, yeti.
-
-[params.theme]
-  name = "paper"
-
 [params.popover]
   # This is a highly configurable popover form.
   enablepopover = false #enable or disable popover: true/false.
@@ -164,6 +157,13 @@ disqusShortname = "your_disqus_shortname"
   optin = true #opt-in: true/false
 
 [params]
+  # bootswatch theme name, select one: cerulean, cosmo, cyborg, darkly,
+  # default, flatly, journal,  lumen, paper, readable, sandstone, simplex,
+  # slate, spacelab, superhero, united, yeti.
+
+  bootswatchtheme = "paper"
+
+
     # menu for changing language. This changes languages with js and stores the choice with the help
     # of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The name of the
     # md files needs to have the same name for each language abbreviation to work correctly. Example:
