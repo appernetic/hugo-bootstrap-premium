@@ -4,8 +4,8 @@
 {{ "<![endif]-->" | safeHTML }}
 
 <!-- selection of themed bootstrap css to load-->
-{{ if isset .Site.Params "theme" }}
-    <link rel="stylesheet" href="{{ "css/bootswatch/" | absURL }}{{ .Site.Params.theme.name }}{{ "/bootstrap.min.css" }}">
+{{ if isset .Site.Params "bootswatchtheme" }}
+    <link rel="stylesheet" href="{{ "css/bootswatch/" | absURL }}{{ .Site.Params.bootswatchtheme }}{{ "/bootstrap.min.css" }}">
 {{ else}}
     <link rel="stylesheet" href="{{ "css/bootswatch/default/bootstrap.min.css" | absURL }}">
 {{ end }}
