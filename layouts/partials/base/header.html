@@ -23,11 +23,21 @@
             {{ $currentNode := . }}
             {{ range .Site.Menus.main }}
             <li class="{{if $currentNode.IsMenuCurrent "main" . }}active{{end}}">
-
-              <a href="{{ .URL | absLangURL }}" {{ if and ( isset . "Name" ) ( ne .Name "" ) }} title="{{ .Name }}"{{ end }}>
-                {{ .Pre }}
-                {{ .Name }}
-              </a>
+              {{  if .HasChildren  }}
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    {{ range .Children }}
+                      <li class="{{ if $currentNode.IsMenuCurrent "main" . }}active{{ end }}">
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                      </li>
+                    {{ end }}
+                  </ul>
+              {{ else }}
+                <a href="{{ .URL | absLangURL }}" {{ if and ( isset . "Name" ) ( ne .Name "" ) }} title="{{ .Name }}"{{ end }}>
+                  {{ .Pre }}
+                  {{ .Name }}
+                </a>
+              {{end}}
             </li>
             {{ end }}
             <!-- switch language -->
