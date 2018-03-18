@@ -458,3 +458,8 @@ All feedback is welcome! Head over to the [issue tracker](https://github.com/app
 ## License
 
 Open sourced under the [MIT license](https://github.com/enten/hyde-y/blob/master/LICENSE).
+
+## Sponsors
+List of all the great people and organisations that help us fund this open source work.
+
+If you want to help support, check out my Patreon @ https://www.patreon.com/appernetic
