@@ -24,11 +24,11 @@
             {{ range .Site.Menus.main }}
             <li class="{{if $currentNode.IsMenuCurrent "main" . }}active{{end}}">
               {{  if .HasChildren  }}
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Pre }} {{ .Name }} <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     {{ range .Children }}
                       <li class="{{ if $currentNode.IsMenuCurrent "main" . }}active{{ end }}">
-                        <a href="{{ .URL }}">{{ .Name }}</a>
+                        <a href="{{ .URL }}">{{ .Pre }} {{ .Name }}</a>
                       </li>
                     {{ end }}
                   </ul>
