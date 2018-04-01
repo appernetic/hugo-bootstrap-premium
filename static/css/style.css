@@ -10,7 +10,13 @@ body {
   font-family: 'Open Sans', 'sans-serif';
   font-size: 14px;
   margin-bottom: 70px;
+  display: none;
 }
+
+.fontawesome-i2svg-active body {
+  display: initial;
+}
+
 .footer {
   position: absolute;
   bottom: -5%;
@@ -86,7 +92,7 @@ iframe {
 }
 #Email.fieldInvalid {
   border: 1px solid #ff0000;
-}  
+}
 code.has-jax {
   font: inherit;
   font-size: 100%;
@@ -99,13 +105,11 @@ code.has-jax {
     padding: 0 0 0 5px;
 }
 
-.fa-facebook-official { color: #3b5998; }
+.fa-facebook { color: #3b5998; }
 
 .fa-google-plus { color: #d34836; }
 
 .fa-linkedin { color: #0077b5; }
-
-.fa-envelop { color: #444444; }
 
 .fa-reddit { color: #ff5700; }
 
