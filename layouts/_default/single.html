@@ -10,7 +10,7 @@
         background-size:  cover;
         height: 400px;
     }
-    .title-metas {
+    .title-metas, .hat {
         position: absolute;
         right: 0px;
         left:0px;
@@ -18,7 +18,7 @@
         background:linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgb(255, 255, 255));
     }
     body > .container {
-        padding: 0px;
+        padding-top: 15px;
     }
 
 </style>
@@ -26,9 +26,6 @@
 <div class="container">
   <div class="row">
       {{ .Render "single.hat" }}
-<!-- Site.Params: {{.Site.Params.heroImage}} -->
-<!-- Page.Params: '{{.Params.heroImage}}' -->
-<!-- Scratch GEt: {{.Scratch.Get "url"}} -->
     </div>
 </div>
 </div>
