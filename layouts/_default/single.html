@@ -1,8 +1,42 @@
 {{ partial "head.html" . }}
+{{ .Scratch.Set "url" (cond (isset .Site.Params "heroimage") .Site.Params.heroImage "") }}
+{{ .Scratch.Set "url" (cond (isset .Params "heroimage") .Params.heroImage (.Scratch.Get "url") ) }}
+{{ if (ne (.Scratch.Get "url") "") }}
+<style>
+    .hero {
+        background-image: url({{.Scratch.Get "url"}});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:  cover;
+        height: 400px;
+    }
+    .title-metas, .hat {
+        position: absolute;
+        right: 0px;
+        left:0px;
+        bottom: -400px;
+        background:linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgb(255, 255, 255));
+    }
+    body > .container {
+        padding-top: 15px;
+    }
+
+</style>
+<div class="hero">
+<div class="container">
+  <div class="row">
+      {{ .Render "single.hat" }}
+    </div>
+</div>
+</div>
+{{ end }}
 <div class="container">
   <div class="row">
     <div class="col-sm-{{ if .Site.Params.showRightSidebar }}9{{ else }}12{{ end }}">
+
+{{ if (eq (.Scratch.Get "url") "") }}
       {{ .Render "single.hat" }}
+{{ end }}
       {{ .Render "single.content" }}
       {{ .Render "single.boot" }}
     </div>
