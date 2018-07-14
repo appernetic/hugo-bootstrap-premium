@@ -86,7 +86,7 @@ iframe {
 }
 #Email.fieldInvalid {
   border: 1px solid #ff0000;
-}  
+}
 code.has-jax {
   font: inherit;
   font-size: 100%;
@@ -99,7 +99,16 @@ code.has-jax {
     padding: 0 0 0 5px;
 }
 
-.fa-facebook-official { color: #3b5998; }
+div.section.social {
+    margin-top: 24px;
+    text-align: center;
+}
+div.section.social .fa {
+    margin-right:6px;
+    font-size: 1.4em;
+}
+
+.fa-facebook { color: #3b5998; }
 
 .fa-google-plus { color: #d34836; }
 
@@ -110,3 +119,5 @@ code.has-jax {
 .fa-reddit { color: #ff5700; }
 
 .fa-twitter { color: #4099FF; }
+
+.fa-rss { color: #f26522; }
