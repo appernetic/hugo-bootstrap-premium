@@ -28,7 +28,7 @@ Hugo-bootstrap-premium theme with default settings.
 4. In Settings change the line under [params.popover] enablepopover = false if you don't use the popover.
 5. To configure menues and footer you need access to the data folder, read more in section "Access data folders".
 5. Click the button: Preview or Publish.
-6. Wait 10 min or clear your local browser cache to see changes at GitHub. In preview content is updated imediatley but CSS changes need a cache clear to be visible.  
+6. Wait 10 min or clear your local browser cache to see changes at GitHub. In preview content is updated imediatley but CSS changes need a cache clear to be visible.
 
 
 ![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-premium/master/images/cloneatheme.png)
@@ -203,6 +203,9 @@ disqusShortname = "your_disqus_shortname"
     youtube = ""  # Your Youtube channel ID
     flattr = ""  # populate with your flattr uid
 
+    # Enable or disable social sharing icons
+    socialsharing = true
+
 [blackfriday]
     angledQuotes = true
     fractions = false
@@ -374,7 +377,7 @@ url = "sv"
   identifier = ""
   weight = 4
   url = "en"
-```   
+```
 This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md.
 
 If the visitor switch language when on a blog post we redirect to respective /post/ sub dir.
