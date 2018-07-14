@@ -111,6 +111,9 @@ twitter = "Myprofile" # Your Twitter profile ID
 youtube = ""  # Your Youtube channel ID
 flattr = ""  # populate with your flattr uid
 
+# Enable or disable social sharing icons in posts
+socialsharing = true
+
 [blackfriday]
 angledQuotes = true
 fractions = false
