@@ -1,3 +1,6 @@
+{{ if .Site.Params.showSearchInSidebar }}
+{{ partial "modules/page/search.html" . }}
+{{ end }}
 <div>
   {{ if and .IsPage (eq .Params.toc true) }}
     <div class="section">
