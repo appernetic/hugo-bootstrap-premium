@@ -143,14 +143,13 @@ div.caution td.content, div.warning td.content, div.note td.content {
     padding: 10px;
     padding-left: 15px;
 }
-div.caution tbody tr td.content {
+.admonitionblock.caution td.content {
     background-color: #FF9999 !important;
 }
 
-div.warning tbody tr td.content {
+.admonitionblock.warning td.content {
     background-color: yellow !important;
 }
-
-div.note tbody tr td.content {
+.admonitionblock.note td.content {
     background-color: lightyellow !important;
 }
