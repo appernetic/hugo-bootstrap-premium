@@ -120,10 +120,37 @@ div.section.social .fa {
 
 .fa-twitter { color: #4099FF; }
 
-.fa-rss { color: #f26522; }
+.fa-feed { color: #f26522; }
 
-.icon-warning:before, .icon-caution:before {
+.icon-warning::before, .icon-caution::before {
     font-size: 1.3em;
     color: red;
-    content:"\f071";
+    content: "\f071";
+}
+
+.icon-note::before {
+    font-size: 1.3em;
+    content: "\f075";
+}
+
+div.caution td.icon, div.warning td.icon, div.note td.icon {
+    text-align: center;
+    font-size: 1.4em;
+    vertical-align: middle;
+}
+div.caution td.content, div.warning td.content, div.note td.content {
+    vertical-align: middle;
+    padding: 10px;
+    padding-left: 15px;
+}
+div.caution tbody tr td.content {
+    background-color: #FF9999 !important;
+}
+
+div.warning tbody tr td.content {
+    background-color: yellow !important;
+}
+
+div.note tbody tr td.content {
+    background-color: lightyellow !important;
 }
