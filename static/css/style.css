@@ -121,3 +121,9 @@ div.section.social .fa {
 .fa-twitter { color: #4099FF; }
 
 .fa-rss { color: #f26522; }
+
+.icon-warning:before, .icon-caution:before {
+    font-size: 1.3em;
+    color: red;
+    content:"\f071";
+}

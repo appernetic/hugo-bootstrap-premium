@@ -179,6 +179,9 @@ disqusShortname = "your_disqus_shortname"
     # Show a sidebar menu
     showRightSidebar = true
 
+    # Show social icons in sidebar
+    showSocialInSidebar = true
+
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
     home = "home"

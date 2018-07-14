@@ -6,7 +6,7 @@
   {{ end }}
   &middot; {{ i18n "readinabout" . }}
   &middot; ({{ i18n "words" . }})
-  {{ if .Params.params.socialsharing true }}
+  {{ if .Site.Params.socialsharing }}
   <br /> {{ partial "bloc/content/sharing.html" . }}
   {{ end }}
   </small>

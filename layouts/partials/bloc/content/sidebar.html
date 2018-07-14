@@ -33,8 +33,9 @@
       </div>
       {{ end }}
     {{ end }}
+    {{ if .Site.Params.showSocialInSidebar }}
     <div class="section social">
         {{ partial "modules/site/link/social" . }}
     </div>
-
+    {{ end }}
 </div>
