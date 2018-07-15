@@ -2,6 +2,7 @@ function searchIndex() {
     return lunr(function() {
         this.field("title",{boost:10}),
         this.field("tags",{boost:5}),
+        this.field("content"),
         this.ref("ref")
     });
 }
