@@ -88,3 +88,19 @@ MathJax.Hub.Config({
 {{ range .Site.Params.customJS }}
 <script type="text/javascript" src="{{ . | absURL}}"></script>
 {{ end }}
+<script type="text/javascript" src="/js/search.js"></script>
+<script type="text/javascript">
+loadIndexJson(
+    addToSearchIndex(
+        searchIndex(),
+        registerSearchHandler(
+            document.getElementById('search-input'),
+            search(
+                renderSearchResults(
+                    document.getElementById('search-results')
+                )
+            )
+        )
+    )
+);
+</script>

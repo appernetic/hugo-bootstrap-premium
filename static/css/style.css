@@ -167,3 +167,22 @@ div.caution td.content, div.warning td.content, div.note td.content {
     background-color: #2fa4e7;
     color: #ffffff !important;
 }
+#search-results:empty {
+    display: none;
+}
+
+#search-results {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #2fa4e7;
+    position: absolute;
+    top: 25px;
+    box-shadow: 5px 5px #dff1fb;
+}
+
+#search-results ul, #search-results li{
+    list-style-type: none;
+}
+#search-results ul {
+    padding: 5px;
+}
