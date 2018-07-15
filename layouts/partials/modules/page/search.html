@@ -1,11 +1,4 @@
 {{ if .Site.Params.showSearchInSidebar }}
-<div style="text-align:center">
-<form class="form-inline" role="search" action="https://duckduckgo.com/">
-  <div class="form-group">
-    <input type="text" name="q" class="form-control" placeholder="DuckDuckGo Search">
-    <input type="hidden" name="sites" value="stoeps.de">
-  </div>
-  <button type="submit" class="btn btn-small">Search</button>
-</form>
-</div>
+<p><input id="search-input" type="text" onfocus="this.value=''" value="search" /></p>
+<div id="search-results"></div>
 {{ end }}
