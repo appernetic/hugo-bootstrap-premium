@@ -1,22 +1,3 @@
-
-<!--
-//
-//  OUTPUT POSTS
-//––––––––––––––––––––––––––––––––––––––––––––––––––
--->
-{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
-
-{{ range $paginator.Pages }}
-  <div class="post">
-    <h2 class="post__title">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
-    <div class="post__summary">
-      {{ .Summary }}
-    </div>
-  </div>
-{{ end }}
-
 <!--
 //
 //  PAGE NUMBERS
