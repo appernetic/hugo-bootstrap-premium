@@ -20,8 +20,9 @@
 <!-- If there's more than one page. -->
 {{ if gt $paginator.TotalPages 1 }}
 
+<div id="pagination">
   <ul class="pagination">
-    
+
     <!-- First page. -->
     {{ if ne $paginator.PageNumber 1 }}
     <li class="pagination__item pagination__item--first">
@@ -39,13 +40,13 @@
       </a>
     </li>
     {{ end }}
-  
+
     <!-- Page numbers. -->
     {{ range $paginator.Pagers }}
-    
+
       {{ $.Scratch.Set "page_number_flag" false }}
 
-      
+
       <!-- Advanced page numbers. -->
       {{ if gt $paginator.TotalPages $max_links }}
 
@@ -72,14 +73,14 @@
 
         <!-- Middle pages. -->
         {{ else }}
-          
+
           {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
             {{ $.Scratch.Set "page_number_flag" true }}
           {{ end }}
 
         {{ end }}
 
-      
+
       <!-- Simple page numbers. -->
       {{ else }}
 
@@ -116,5 +117,7 @@
     </li>
     {{ end }}
 
-  </ul><!-- .pagination -->
+  </ul>
+</div>
+<!-- .pagination -->
 {{ end }}
