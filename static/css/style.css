@@ -158,3 +158,12 @@ div.caution td.content, div.warning td.content, div.note td.content {
     width: 100%;
     text-align: center;
 }
+
+.pagination__item a.pagination__link {
+    background-color: inherit;
+    color: #2fa4e7;
+}
+.pagination__item--current a.pagination__link{
+    background-color: #2fa4e7;
+    color: #ffffff !important;
+}
