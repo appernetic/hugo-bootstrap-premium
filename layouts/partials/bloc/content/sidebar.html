@@ -1,9 +1,7 @@
 {{ if .Site.Params.showSearchInSidebar }}
 {{ partial "modules/page/search.html" . }}
 {{ end }}
-{{ if .Site.Params.showBMC }} 
-{{ partial "modules/page/bmc.html" }} 
-{{ end }} 
+{{ partial "modules/page/ko-fi.html" }} 
 <div>
   {{ if and .IsPage (eq .Params.toc true) }}
     <div class="section">
