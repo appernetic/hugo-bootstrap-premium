@@ -171,14 +171,17 @@ div.caution td.content, div.warning td.content, div.note td.content {
     display: none;
 }
 
-#search {
-    text-align: center;
-}
-
 #ko-fi {
     padding-top: 10px;
     padding-bottom: 10px;
-    text-align: center;
+}
+
+div#search {
+    padding-left: 10px;
+}
+
+#search-input {
+    width: 100% !important;
 }
 
 #search-results {
