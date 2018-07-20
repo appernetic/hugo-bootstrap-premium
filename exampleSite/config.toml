@@ -110,6 +110,10 @@ facebook = "Myprofile" # Your Facebook profile ID
 twitter = "Myprofile" # Your Twitter profile ID
 youtube = ""  # Your Youtube channel ID
 flattr = ""  # populate with your flattr uid
+email = "" # Show mail in Sidebar
+
+# Enable or disable social sharing icons in posts
+socialsharing = true
 
 [blackfriday]
 angledQuotes = true

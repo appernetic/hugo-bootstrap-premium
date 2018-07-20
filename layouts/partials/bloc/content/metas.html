@@ -6,7 +6,9 @@
   {{ end }}
   &middot; {{ i18n "readinabout" . }}
   &middot; ({{ i18n "words" . }})
-  &middot; {{ partial "bloc/content/sharing.html" . }}
+  {{ if .Site.Params.socialsharing }}
+  <br /> {{ partial "bloc/content/sharing.html" . }}
+  {{ end }}
   </small>
 {{ end }}
 <div class="margin-10">{{ partial "modules/page/tags.html" . }}

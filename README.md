@@ -28,7 +28,7 @@ Hugo-bootstrap-premium theme with default settings.
 4. In Settings change the line under [params.popover] enablepopover = false if you don't use the popover.
 5. To configure menues and footer you need access to the data folder, read more in section "Access data folders".
 5. Click the button: Preview or Publish.
-6. Wait 10 min or clear your local browser cache to see changes at GitHub. In preview content is updated imediatley but CSS changes need a cache clear to be visible.  
+6. Wait 10 min or clear your local browser cache to see changes at GitHub. In preview content is updated imediatley but CSS changes need a cache clear to be visible.
 
 
 ![preview](https://raw.githubusercontent.com/appernetic/hugo-bootstrap-premium/master/images/cloneatheme.png)
@@ -125,6 +125,10 @@ disqusShortname = "your_disqus_shortname"
     post = "/:year/:month/:day/:filename/"
     code = "/:filename/"
 
+[outputs]
+    home = [ "HTML", "RSS", "JSON"  ]
+    post = [ "HTML"  ]
+
 [taxonomies]
     tag = "tags"
     topic = "topics"
@@ -179,6 +183,14 @@ disqusShortname = "your_disqus_shortname"
     # Show a sidebar menu
     showRightSidebar = true
 
+    # Show social icons in sidebar
+    showSocialInSidebar = true
+
+    # Show search input field in sidebar
+    # You need to add JSON Outputs and a index.json
+    # Have a look at the bottom on integrate lunrjs search
+    showSearchInSidebar = true
+
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
     home = "home"
@@ -195,13 +207,19 @@ disqusShortname = "your_disqus_shortname"
 
     # Sidebar social links.
     github = "enten/hugo-boilerplate" # Your Github profile ID
-    bitbucket = "" # Your Bitbucket profile ID
-    linkedin = "" # Your LinkedIn profile ID (from public URL)
-    googleplus = "" # Your Google+ profile ID
-    facebook = "" # Your Facebook profile ID
-    twitter = "" # Your Twitter profile ID
-    youtube = ""  # Your Youtube channel ID
+    bitbucket = ""                    # Your Bitbucket profile ID
+    linkedin = ""                     # Your LinkedIn profile ID (from public URL)
+    googleplus = ""                   # Your Google+ profile ID
+    facebook = ""                     # Your Facebook profile ID
+    twitter = ""                      # Your Twitter profile ID
+    youtube = ""                      # Your Youtube channel ID
+    kofi = ""                         # Your Ko-fi.com ID
+    xing = ""                         # Your Xing profile ID
+    # Flattr seems not implemented in the moment
     flattr = ""  # populate with your flattr uid
+
+    # Enable or disable social sharing icons
+    socialsharing = true
 
 [blackfriday]
     angledQuotes = true
@@ -374,7 +392,7 @@ url = "sv"
   identifier = ""
   weight = 4
   url = "en"
-```   
+```
 This changes languages with js and stores the choice with the help of JavaScript in a Cookie. Then the path is rewritten with pathnamereplace.js. The md files needs to have the same name for each language abbreviation to work correctly. Example: showcase.en.md and showcase.sv.md.
 
 If the visitor switch language when on a blog post we redirect to respective /post/ sub dir.
@@ -439,13 +457,44 @@ Read more about the [MathJax implementation](https://gohugo.io/tutorials/mathjax
 * Added exampleSite folder.
 * Added correct image links to images in the README file.
 
+## Added lunrjs search
+
+Add to config.toml:
+
+    [outputs]
+      home = [ "HTML", "RSS", "JSON" ]
+      post = [ "HTML" ]
+
+    [params]
+      showSearchInSidebar = true
+
+Create `search-index.md` in your content folder.
+
+    ---
+    date: 2016-07-15T13:55:09+02:00
+    type: "json"
+    url: "index.json"
+    ----
+
+Output of JSON is generated from `layouts/json/single.html`.
+
+Now Hugo generates the `index.json` file used with your page.
+
 ## Known bugs
 
-* No known bugs.
+* During Site build:
+    WARNING: calling IsSet with unsupported type "ptr" (*hugolib.MenuEntry) will always return false.
 
 ## Changes and enhancements by [Murali Rath](https://github.com/mmrath/hugo-bootstrap/) from the original theme
 * Modified to work with bootstrap and bootswatch
 * ...many other small layout tweaks!
+
+## Changes and enhancements by [Christoph Stoettner](https://github.com/stoeps13) to the theme:
+* Added Social Icons to Sidebar
+* Added Option to enable and disable social sharing icons
+* Added Lunr search and config option
+* Added Xing, Ko-Fi.com, Gitlab and Bitbucket to Sidebar
+* Updated font awesome to 4.7.0
 
 ## Attribution
 

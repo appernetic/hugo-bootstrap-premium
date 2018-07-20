@@ -86,7 +86,7 @@ iframe {
 }
 #Email.fieldInvalid {
   border: 1px solid #ff0000;
-}  
+}
 code.has-jax {
   font: inherit;
   font-size: 100%;
@@ -99,7 +99,16 @@ code.has-jax {
     padding: 0 0 0 5px;
 }
 
-.fa-facebook-official { color: #3b5998; }
+div.section.social {
+    margin-top: 24px;
+    text-align: center;
+}
+div.section.social .fa {
+    margin-right:6px;
+    font-size: 1.4em;
+}
+
+.fa-facebook { color: #3b5998; }
 
 .fa-google-plus { color: #d34836; }
 
@@ -110,3 +119,83 @@ code.has-jax {
 .fa-reddit { color: #ff5700; }
 
 .fa-twitter { color: #4099FF; }
+
+.fa-feed { color: #f26522; }
+
+.icon-warning::before, .icon-caution::before {
+    font-size: 1.3em;
+    color: red;
+    content: "\f071";
+}
+
+.icon-note::before {
+    font-size: 1.3em;
+    content: "\f075";
+}
+
+div.caution td.icon, div.warning td.icon, div.note td.icon {
+    text-align: center;
+    font-size: 1.4em;
+    vertical-align: middle;
+}
+div.caution td.content, div.warning td.content, div.note td.content {
+    vertical-align: middle;
+    padding: 10px;
+    padding-left: 15px;
+}
+.admonitionblock.caution td.content {
+    background-color: #FF9999 !important;
+}
+
+.admonitionblock.warning td.content {
+    background-color: yellow !important;
+}
+.admonitionblock.note td.content {
+    background-color: lightyellow !important;
+}
+
+#pagination {
+    width: 100%;
+    text-align: center;
+}
+
+.pagination__item a.pagination__link {
+    background-color: inherit;
+    color: #2fa4e7;
+}
+.pagination__item--current a.pagination__link{
+    background-color: #2fa4e7;
+    color: #ffffff !important;
+}
+#search-results:empty {
+    display: none;
+}
+
+#ko-fi {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div#search {
+    padding-left: 10px;
+}
+
+#search-input {
+    width: 100% !important;
+}
+
+#search-results {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #2fa4e7;
+    position: absolute;
+    top: 25px;
+    box-shadow: 5px 5px #dff1fb;
+}
+
+#search-results ul, #search-results li{
+    list-style-type: none;
+}
+#search-results ul {
+    padding: 5px;
+}

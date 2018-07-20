@@ -1,5 +1,7 @@
 <footer>
+  {{ if .Site.Params.socialsharing }}
   {{ partial "bloc/content/sharing.html" . }}
+  {{ end }}
   {{ partial "bloc/content/navigation.html" . }}
   {{ partial "bloc/content/comments.html" . }}
 </footer>
