@@ -482,11 +482,19 @@ Now Hugo generates the `index.json` file used with your page.
 
 ## Known bugs
 
-* No known bugs.
+* During Site build:
+    WARNING: calling IsSet with unsupported type "ptr" (*hugolib.MenuEntry) will always return false.
 
 ## Changes and enhancements by [Murali Rath](https://github.com/mmrath/hugo-bootstrap/) from the original theme
 * Modified to work with bootstrap and bootswatch
 * ...many other small layout tweaks!
+
+## Changes and enhancements by [Christoph Stoettner](https://github.com/stoeps13) to the theme:
+* Added Social Icons to Sidebar
+* Added Option to enable and disable social sharing icons
+* Added Lunr search and config option
+* Added Xing, Ko-Fi.com, Gitlab and Bitbucket to Sidebar
+* Updated font awesome to 4.7.0
 
 ## Attribution
 
