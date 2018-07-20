@@ -125,6 +125,10 @@ disqusShortname = "your_disqus_shortname"
     post = "/:year/:month/:day/:filename/"
     code = "/:filename/"
 
+[outputs]
+    home = [ "HTML", "RSS", "JSON"  ]
+    post = [ "HTML"  ]
+
 [taxonomies]
     tag = "tags"
     topic = "topics"
@@ -182,6 +186,11 @@ disqusShortname = "your_disqus_shortname"
     # Show social icons in sidebar
     showSocialInSidebar = true
 
+    # Show search input field in sidebar
+    # You need to add JSON Outputs and a index.json
+    # Have a look at the bottom on integrate lunrjs search
+    showSearchInSidebar = true
+
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Home".
     home = "home"
@@ -198,12 +207,15 @@ disqusShortname = "your_disqus_shortname"
 
     # Sidebar social links.
     github = "enten/hugo-boilerplate" # Your Github profile ID
-    bitbucket = "" # Your Bitbucket profile ID
-    linkedin = "" # Your LinkedIn profile ID (from public URL)
-    googleplus = "" # Your Google+ profile ID
-    facebook = "" # Your Facebook profile ID
-    twitter = "" # Your Twitter profile ID
-    youtube = ""  # Your Youtube channel ID
+    bitbucket = ""                    # Your Bitbucket profile ID
+    linkedin = ""                     # Your LinkedIn profile ID (from public URL)
+    googleplus = ""                   # Your Google+ profile ID
+    facebook = ""                     # Your Facebook profile ID
+    twitter = ""                      # Your Twitter profile ID
+    youtube = ""                      # Your Youtube channel ID
+    kofi = ""                         # Your Ko-fi.com ID
+    xing = ""                         # Your Xing profile ID
+    # Flattr seems not implemented in the moment
     flattr = ""  # populate with your flattr uid
 
     # Enable or disable social sharing icons
@@ -444,6 +456,29 @@ Read more about the [MathJax implementation](https://gohugo.io/tutorials/mathjax
 * Added instructions in the README for use with Appernetic.io.
 * Added exampleSite folder.
 * Added correct image links to images in the README file.
+
+## Added lunrjs search
+
+Add to config.toml:
+
+    [outputs]
+      home = [ "HTML", "RSS", "JSON" ]
+      post = [ "HTML" ]
+
+    [params]
+      showSearchInSidebar = true
+
+Create `search-index.md` in your content folder.
+
+    ---
+    date: 2016-07-15T13:55:09+02:00
+    type: "json"
+    url: "index.json"
+    ----
+
+Output of JSON is generated from `layouts/json/single.html`.
+
+Now Hugo generates the `index.json` file used with your page.
 
 ## Known bugs
 
