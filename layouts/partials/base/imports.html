@@ -4,21 +4,26 @@
 {{ "<![endif]-->" | safeHTML }}
 
 <!-- selection of themed bootstrap css to load-->
+{{ .Scratch.Set "bootstrap" (slice (resources.Get "css/bootswatch/default/bootstrap.min.css"))}}
 {{ if isset .Site.Params "bootswatchtheme" }}
-    <link rel="stylesheet" href="{{ "css/bootswatch/" | absURL }}{{ .Site.Params.bootswatchtheme }}{{ "/bootstrap.min.css" }}">
-{{ else}}
-    <link rel="stylesheet" href="{{ "css/bootswatch/default/bootstrap.min.css" | absURL }}">
+    {{ $theme := printf "css/bootswatch/%s/bootstrap.min.css" $.Site.Params.bootswatchtheme }}
+    {{ .Scratch.Set "bootstrap" (slice (resources.Get $theme))}}
 {{ end }}
+{{ .Scratch.Add "css" (.Scratch.Get "bootstrap")}}
+{{ .Scratch.Add "css" (slice (resources.Get "css/font-awesome.min.css"))}}
+{{ .Scratch.Add "css" (slice (resources.Get "css/google-fonts.css"))}}
+{{ .Scratch.Add "css" (slice (resources.Get "css/style.css"))}}
 
-<link rel="stylesheet" href="{{ "css/font-awesome.min.css" | absURL }}">
-<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+{{ .Scratch.Set "highlight" (slice (resources.Get "css/highlight/default.css")) }}
+{{ if isset .Site.Params "highlight" }}
+    {{ $htTheme := printf "css/highlight/%s.css" $.Site.Params.highlight }}
+    {{ .Scratch.Set "highlight" (slice (resources.Get $htTheme))}}
+{{ end }}
+{{ .Scratch.Add "css" (.Scratch.Get "highlight")}}
 
 {{ range .Site.Params.customCSS }}
-<link rel="stylesheet" href="{{ . | absURL}}">
+    {{ $.Scratch.Add "css" (slice (resources.Get .)) }}
 {{ end }}
 
-{{ if isset .Site.Params "highlight" }}
-  <link rel="stylesheet" href="{{ "css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">
-{{ else }}
-  <link rel="stylesheet" href="{{ "css/highlight/" | absURL }}default.css">
-{{ end }}
+{{ $css := .Scratch.Get "css" | resources.Concat "css/bundle.css" | resources.Minify| resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">

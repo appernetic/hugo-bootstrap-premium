@@ -6,18 +6,19 @@
 <!-- sumome -->
 <script src="//load.sumome.com/" data-sumo-site-id="{{ .Site.Params.sumomeid }}" async="async"></script>
 {{ end }}
-<script src="{{ "js/jquery.min.js" | absURL }}"></script>
-<script src="{{ "js/bootstrap.min.js" | absURL }}"></script>
+
+{{ .Scratch.Add "js" (slice (resources.Get "js/jquery.min.js"))}}
+{{ .Scratch.Add "js" (slice (resources.Get "js/bootstrap.min.js"))}}
+
 {{ if eq .Site.Params.switchlang true }}
-<script src="{{ "js/js.cookie.js" | absURL }}"></script>
+    {{ .Scratch.Add "js" (slice (resources.Get "js/js.cookie.js"))}}
 {{ end }}
 {{ if eq .Site.Params.popover.enablepopover true}}
-<script src="{{ "js/angular.min.js" | absURL }}"></script>
-<script src="/js/popover/angular-storage.min.js"></script>
+    {{ .Scratch.Add "js" (slice (resources.Get "js/angular.min.js"))}}
+    {{ .Scratch.Add "js" (slice (resources.Get "js/popover/angular-storage.min.js"))}}
 {{ end }}
-<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
-<script src="{{ "js/site.js" | absURL }}"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+{{ .Scratch.Add "js" (slice (resources.Get "js/highlight.pack.js"))}}
+{{ .Scratch.Add "js" (slice (resources.Get "js/site.js"))}}
 
 {{ with .Site.Params.googleAnalytics }}
 <script>
@@ -47,14 +48,23 @@ COOKIE_NAME = {{.Site.Params.popover.cookiename}},
 CONTENTLANGUAGE = {{ .Site.Params.DefaultContentLanguage }}; // used in pathnamereplace.js
 </script>
 {{ if eq .Site.Params.switchlang true }}
-<script src="{{ "js/pathnamereplace.js" | absURL }}"></script>
+    {{ .Scratch.Add "js" (slice (resources.Get "js/pathnamereplace.js"))}}
 {{ end }}
 
 {{ if eq .Site.Params.popover.enablepopover true }}
-<script src="/js/popover/angular-modal-service.min.js"></script>
-<script src="/js/angular-ismobile.min.js"></script>
-<script src="/js/popover/popover.min.js"></script>
+    {{ .Scratch.Add "js" (slice (resources.Get "js/popover/angular-modal-service.min.js"))}}
+    {{ .Scratch.Add "js" (slice (resources.Get "js/angular-ismobile.min.js"))}}
+    {{ .Scratch.Add "js" (slice (resources.Get "js/popover/popover.min.js"))}}
 {{ end }}
+
+{{ range .Site.Params.customJS }}
+    {{ $.Scratch.Add "js" (slice (resources.Get .))}}
+{{ end }}
+
+{{ $js := .Scratch.Get "js" | resources.Concat "js/bundle.js" | resources.Minify| resources.Fingerprint "sha512" }}
+<script  src="{{$js.Permalink}}" integrity="{{ $js.Data.Integrity }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 
 {{ if ne .Site.Params.mathjax "" }}
 <script type="text/javascript"
@@ -84,7 +94,4 @@ MathJax.Hub.Config({
     }
 });
 </script>
-{{ end }}
-{{ range .Site.Params.customJS }}
-<script type="text/javascript" src="{{ . | absURL}}"></script>
 {{ end }}
