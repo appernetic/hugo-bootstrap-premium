@@ -33,7 +33,7 @@
                     {{ end }}
                   </ul>
               {{ else }}
-                <a href="{{ .URL | absLangURL }}" {{ if and ( isset . "Name" ) ( ne .Name "" ) }} title="{{ .Name }}"{{ end }}>
+		<a href="{{ .URL | absLangURL }}" {{ if ne .Name ""}} title="{{ .Name }}"{{ end }}>
                   {{ .Pre }}
                   {{ .Name }}
                 </a>
@@ -45,7 +45,7 @@
             {{ $currentNode := . }}
             {{ range .Site.Menus.switchlang }}
             <li class="{{if $currentNode.IsMenuCurrent "main" . }}active{{end}}">
-              <a href="javascript:changeLanguage('{{ .URL | markdownify }}');" {{ if and ( isset . "Name" ) ( ne .Name "" ) }} title="{{ .Name }}"{{ end }}>
+              <a href="javascript:changeLanguage('{{ .URL | markdownify }}');" {{ if ne .Name "" }} title="{{ .Name }}"{{ end }}>
                 {{ .Pre }}
                 {{ .Name }}
               </a>
