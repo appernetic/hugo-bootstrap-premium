@@ -26,4 +26,4 @@
 {{ end }}
 
 {{ $css := .Scratch.Get "css" | resources.Concat "css/bundle.css" | resources.Minify| resources.Fingerprint "sha512" }}
-<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $css.Permalink }}" >
