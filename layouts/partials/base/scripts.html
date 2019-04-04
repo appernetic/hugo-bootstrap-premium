@@ -62,7 +62,7 @@ CONTENTLANGUAGE = {{ .Site.Params.DefaultContentLanguage }}; // used in pathname
 {{ end }}
 
 {{ $js := .Scratch.Get "js" | resources.Concat "js/bundle.js" | resources.Minify| resources.Fingerprint "sha512" }}
-<script  src="{{$js.Permalink}}" integrity="{{ $js.Data.Integrity }}"></script>
+<script  src="{{$js.Permalink}}" ></script>
 
 
 {{ if ne .Site.Params.mathjax "" }}
