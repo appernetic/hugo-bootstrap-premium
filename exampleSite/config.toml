@@ -28,7 +28,8 @@ paginate = 10
 paginatePath = "page"
 
 # Enable Disqus integration
-#disqusShortname = "shortname"
+disqusShortname = "shortname"
+
 
 [permalinks]
 post = "/:year/:month/:day/:filename/"
@@ -66,8 +67,13 @@ errormessage = "Submitting form failed!"
 optin = true #opt-in: true/false
 
 [params]
-# Enable Commento Host
-commentoHost = "commento.io"
+## Commento Host
+#commentoHostname = ""
+## Coral Host
+#coralHostname = ""
+## Remark42 Host
+#remarkHostname = ""
+#remarkID = ""
 
 # bootswatch theme name, unmark and select one: cerulean, cosmo, cyborg, darkly,
 # default, flatly, journal,  lumen, paper, readable, sandstone, simplex,

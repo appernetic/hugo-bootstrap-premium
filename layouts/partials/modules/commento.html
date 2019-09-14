@@ -2,7 +2,7 @@
 <div id="commento"></div>
 <script type="text/javascript">
   (function() {
-    // Don't ever inject Disqus on localhost--it creates unwanted
+    // Don't ever inject Commento on localhost--it creates unwanted
     // discussions from 'localhost:1313' on your Commanto account...
     if (window.location.hostname == "localhost")
       return;
@@ -12,5 +12,5 @@
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-<noscript>Please enable JavaScript to view the comments powered by Commento.</noscript>
+<noscript>Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.</noscript>
 {{ end }}

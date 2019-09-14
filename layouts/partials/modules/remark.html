@@ -1,0 +1,24 @@
+{{ with .Site.Params.RemarkHostname }}
+<div id="remark42"></div>
+<script type="text/javascript">
+  var remark_config = {
+    host: "https://{{ . }}", // hostname of remark server, same as REMARK_URL in backend config
+    site_id: '{{ $.Site.Params.RemarkID }}',
+    components: ['embed'], // optional param; which components to load. default to ["embed"]
+                          // to load all components define components as ['embed', 'last-comments', 'counter']
+                          // available component are:
+                          //     - 'embed': basic comments widget
+                          //     - 'last-comments': last comments widget, see `Last Comments` section below
+                          //     - 'counter': counter widget, see `Counter` section below
+  };
+  (function(c) {
+    for(var i = 0; i < c.length; i++){
+      var d = document, s = d.createElement('script');
+      s.src = remark_config.host + '/web/' +c[i] +'.js';
+      s.defer = true;
+      (d.head || d.body).appendChild(s);
+    }
+  })(remark_config.components || ['embed']);
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="https://remark42.com/">Remark42</a>.</noscript>
+{{ end }}
