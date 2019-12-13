@@ -29,36 +29,36 @@
 </script>
 {{ end }}
 <script>
-var ENABLE_POPOVER = {{.Site.Params.popover.enablepopover}}, // enable or disable popover: true/false.
-EXPIRE_COOKIE = {{.Site.Params.popover.expirecookie}}, // show it again after number of days to visitor that has not subscribed.
-SHOW_MODAL_TIMEOUT = {{.Site.Params.popover.showmodaltimeout}}, // show popover modal after time interval in milliseconds.
-MOUSE_LEAVE = {{.Site.Params.popover.mouseleave}}, //show popover when mouse leaves window: true/false.
-MODAL_SIZE = {{.Site.Params.popover.modalsize}}, //lg or sm. Empty is md. If phone is detected lg is used.
-POST_URL = {{.Site.Params.popover.posturl}}, // post url, for example zapier hooks.
-SIGNUP_HEADER = {{.Site.Params.popover.signupheader}},
-HEADER_IMAGE = {{.Site.Params.popover.headerimage}},
-IMG_DESCRIPTION = {{.Site.Params.popover.imagedescription}},
-SIGNUP_TEXT = {{.Site.Params.popover.signuptext}},
-INPUT_PLACEHOLDER = {{.Site.Params.popover.inputplaceholder}},
-SUBMIT_BUTTON = {{.Site.Params.popover.submitbutton}},
-SUCCESS_MESSAGE = {{.Site.Params.popover.successmessage}},
-ERROR_MESSAGE = {{.Site.Params.popover.errormessage}},
-OPTIN = {{.Site.Params.popover.optin}},
-COOKIE_NAME = {{.Site.Params.popover.cookiename}},
-CONTENTLANGUAGE = {{ .Site.Params.DefaultContentLanguage }}; // used in pathnamereplace.js
+ var ENABLE_POPOVER = {{.Site.Params.popover.enablepopover}}, // enable or disable popover: true/false.
+     EXPIRE_COOKIE = {{.Site.Params.popover.expirecookie}}, // show it again after number of days to visitor that has not subscribed.
+     SHOW_MODAL_TIMEOUT = {{.Site.Params.popover.showmodaltimeout}}, // show popover modal after time interval in milliseconds.
+     MOUSE_LEAVE = {{.Site.Params.popover.mouseleave}}, //show popover when mouse leaves window: true/false.
+     MODAL_SIZE = {{.Site.Params.popover.modalsize}}, //lg or sm. Empty is md. If phone is detected lg is used.
+     POST_URL = {{.Site.Params.popover.posturl}}, // post url, for example zapier hooks.
+     SIGNUP_HEADER = {{.Site.Params.popover.signupheader}},
+     HEADER_IMAGE = {{.Site.Params.popover.headerimage}},
+     IMG_DESCRIPTION = {{.Site.Params.popover.imagedescription}},
+     SIGNUP_TEXT = {{.Site.Params.popover.signuptext}},
+     INPUT_PLACEHOLDER = {{.Site.Params.popover.inputplaceholder}},
+     SUBMIT_BUTTON = {{.Site.Params.popover.submitbutton}},
+     SUCCESS_MESSAGE = {{.Site.Params.popover.successmessage}},
+     ERROR_MESSAGE = {{.Site.Params.popover.errormessage}},
+     OPTIN = {{.Site.Params.popover.optin}},
+     COOKIE_NAME = {{.Site.Params.popover.cookiename}},
+     CONTENTLANGUAGE = {{ .Site.Params.DefaultContentLanguage }}; // used in pathnamereplace.js
 </script>
 {{ if eq .Site.Params.switchlang true }}
-    {{ .Scratch.Add "js" (slice (resources.Get "js/pathnamereplace.js"))}}
+{{ .Scratch.Add "js" (slice (resources.Get "js/pathnamereplace.js"))}}
 {{ end }}
 
 {{ if eq .Site.Params.popover.enablepopover true }}
-    {{ .Scratch.Add "js" (slice (resources.Get "js/popover/angular-modal-service.min.js"))}}
-    {{ .Scratch.Add "js" (slice (resources.Get "js/angular-ismobile.min.js"))}}
-    {{ .Scratch.Add "js" (slice (resources.Get "js/popover/popover.min.js"))}}
+{{ .Scratch.Add "js" (slice (resources.Get "js/popover/angular-modal-service.min.js"))}}
+{{ .Scratch.Add "js" (slice (resources.Get "js/angular-ismobile.min.js"))}}
+{{ .Scratch.Add "js" (slice (resources.Get "js/popover/popover.min.js"))}}
 {{ end }}
 
 {{ range .Site.Params.customJS }}
-    {{ $.Scratch.Add "js" (slice (resources.Get .))}}
+{{ $.Scratch.Add "js" (slice (resources.Get .))}}
 {{ end }}
 
 {{ $js := .Scratch.Get "js" | resources.Concat "js/bundle.js" | resources.Minify| resources.Fingerprint "sha512" }}
@@ -66,31 +66,50 @@ CONTENTLANGUAGE = {{ .Site.Params.DefaultContentLanguage }}; // used in pathname
 
 
 {{ if ne .Site.Params.mathjax "" }}
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/{{.Site.Params.mathjax}}/MathJax.js"></script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/{{.Site.Params.mathjax}}/config/TeX-AMS-MML_HTMLorMML.js"></script>
+<!-- <script type="text/javascript"
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/{{.Site.Params.mathjax}}/MathJax.js"></script>
+     <script type="text/javascript"
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/{{.Site.Params.mathjax}}/config/TeX-AMS-MML_HTMLorMML.js"></script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
+     <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+     tex2jax: {
+     inlineMath: [['$','$'], ['\\(','\\)']],
+     displayMath: [['$$','$$'], ['\[','\]']],
+     processEscapes: true,
+     processEnvironments: true,
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+     TeX: { equationNumbers: { autoNumber: "AMS" },
+     extensions: ["AMSmath.js", "AMSsymbols.js"] }
+     }
+     });
+     </script>
+
+     <script type="text/x-mathjax-config">
+     MathJax.Hub.Queue(function() {
+     for(var all in MathJax.Hub.getAllJax()) {
+     all.SourceElement().parentNode.className += ' has-jax';
+
+     }
+     });
+     </script> -->
+
+
+<script>
+ window.MathJax = {
+     tex: {
+         inlineMath: [['$','$'], ['\\(','\\)']],
+         displayMath: [['$$','$$'], ['\[','\]']],
+         processEscapes: true,
+         processEnvironments: true
+     },
+     options: {
+         skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+     },
+     loader: {load: ['[tex]/physics']},
+     tex: {packages: {'[+]': ['physics']}}
+ };
 </script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    for(var all in MathJax.Hub.getAllJax()) {
-        all.SourceElement().parentNode.className += ' has-jax';
-
-    }
-});
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
 {{ end }}

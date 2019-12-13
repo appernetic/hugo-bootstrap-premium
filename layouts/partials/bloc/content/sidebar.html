@@ -1,37 +1,37 @@
 <div>
-  {{ if and .IsPage (eq .Params.toc true) }}
+    {{ if and .IsPage (eq .Params.toc true) }}
     <div class="section">
-      <header><div class="title">TableOfContents</div></header>
-      <div class="list-default">{{ .TableOfContents }}</div>
+        <header><div class="title">Table Of Contents</div></header>
+        <div class="list-default">{{ .TableOfContents }}</div>
     </div>
     {{ end }}
 
     <div class="section">
-      <header><div class="title"><b>{{ i18n "latestposts" }}</b></div></header>
-      <div class="content">
-        <ul>
-        {{ range first 10 (where (where .Site.Pages "Type" "post") "IsPage" true) }}
-          <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </li>
-        {{ end }}
-        </ul>
-      </div>
+        <header><div class="title"><b>{{ i18n "latestposts" }}</b></div></header>
+        <div class="content">
+            <ul>
+                {{ range first 10 (where (where .Site.Pages "Type" "post") "IsPage" true) }}
+                <li>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
     </div>
 
     {{ range $key, $value := .Site.Taxonomies }}
-      {{ $len := len $value }}
-      {{ if (not ( eq $len 0 ) ) }}
-      <div class="section taxonomies">
+    {{ $len := len $value }}
+    {{ if (not ( eq $len 0 ) ) }}
+    <div class="section taxonomies">
         <header><div class="title"><b>{{ $key | singularize }}</b></div></header>
 
         <div class="content">
-          <ul>
-            {{ range first 10 $value.ByCount }}<li><a href="{{$.LanguagePrefix }}/{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
-          </ul>
+            <ul>
+                {{ range first 10 $value.ByCount }}<li><a href="{{$.Site.LanguagePrefix }}/{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
+            </ul>
         </div>
-      </div>
-      {{ end }}
+    </div>
+    {{ end }}
     {{ end }}
 
 </div>

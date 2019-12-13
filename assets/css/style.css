@@ -10,6 +10,7 @@ body {
   font-size: 14px;
   margin-bottom: 70px;
 }
+
 .footer {
   position: absolute;
   bottom: -5%;
@@ -18,34 +19,36 @@ body {
   padding-bottom: 1rem;
 }
 
-
 body > .container {
   padding: 75px 15px 0;
 }
 
 .navbar-brand {
-padding: 20px;
-vertical-align: baseline;;
+  padding: 20px;
+  vertical-align: baseline;;
 }
 
 .navbar-brand-img {
-    padding: 0px;
+  padding: 0px;
 }
+
 @media screen and (max-width: 768px) {
-    a.navbar-brand-img>img {
-      vertical-align: bottom;
-      padding: 1em 0 0 15px;
-      max-width: 80%;
-    }
+  a.navbar-brand-img>img {
+    vertical-align: bottom;
+    padding: 1em 0 0 15px;
+    max-width: 80%;
+  }
 }
 
 a.navbar-brand-img>img {
   vertical-align: bottom;
 }
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin: auto;
 }
 
 .nopadding {
@@ -53,7 +56,10 @@ img {
   margin: 0 !important;
 }
 
-.margin-10{margin-bottom:10px; margin-right:10px;}
+.margin-10{
+  margin-bottom:10px;
+  margin-right:10px;
+}
 
 p {
   text-align: justify;
@@ -85,17 +91,17 @@ iframe {
 }
 #Email.fieldInvalid {
   border: 1px solid #ff0000;
-}  
+}
+
 code.has-jax {
   font: inherit;
   font-size: 100%;
   background: inherit;
   border: inherit;
-  }
-
+}
 
 .share-box a{
-    padding: 0 0 0 5px;
+  padding: 0 0 0 5px;
 }
 
 .fa-facebook-official { color: #3b5998; }
@@ -109,3 +115,60 @@ code.has-jax {
 .fa-reddit { color: #ff5700; }
 
 .fa-twitter { color: #4099FF; }
+
+.fa-facebook-official-square { color: #3b5998; }
+
+.fa-google-plus-square { color: #d34836; }
+
+.fa-linkedin-square { color: #0077b5; }
+
+.fa-envelop-square { color: #444444; }
+
+.fa-reddit-square { color: #ff5700; }
+
+.fa-twitter-square { color: #4099FF; }
+
+.fa-bitbucket-square { color: #2684ff; }
+
+.fa-github-square { color: #4183c4; }
+
+.fa-rss-square { color: #f26522; }
+
+.fa-stack-overflow { color: #f48024; }
+
+.fa-heart { color: #ff5700; }
+
+.contact_link {
+  margin: 0px 15px;
+}
+
+.contact_link .fa {
+  margin-right: 5px;
+}
+
+.ox-hugo-toc .heading { font-size: 32px; }
+.org-todo.DONE { color: #7DA600;}
+.org-todo.NEXT { color: #410776;}
+.org-todo.TODO { color: #A4001D;}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    margin: 0 5px;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}

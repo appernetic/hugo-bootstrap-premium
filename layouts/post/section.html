@@ -4,7 +4,7 @@
         {{ partial "bloc/content/h1-title.html" . }}
     </header>
     {{ .Content }}
-    {{ range .Paginator.Pages }}
+    {{ range .Paginator.Pages.ByPublishDate.Reverse }}
     {{ .Render "summary" }}
     {{ end }}
     {{ partial "bloc/content/pagination.html" . }}
