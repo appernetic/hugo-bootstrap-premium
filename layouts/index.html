@@ -8,44 +8,46 @@
      background-position: center;
      background-repeat: no-repeat;
      background-size:  cover;
-     height: 400px;
+     height: 40vh;
  }
- .title-metas, .hat {
+ .homepage-hat {
      position: absolute;
      right: 0px;
      left:0px;
-     bottom: -400px;
-     background:linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgb(255, 255, 255));
+     bottom: calc(-40vh + 1px);
+     background:linear-gradient(to bottom, rgba(68, 68, 68, 0.2), rgb(68, 68, 68));
  }
- body > .container {
-     padding-top: 15px;
+ body > .homepage-container {
+     padding-top: 5vh;
+ }
+ .homepage-title {
+     font-size: 5vw;
+ }
+
+ .homepage-container p {
+     text-align: center;
+ }
+ .homepage-container {
+     text-align: center;
+     color: #ddd;
+ }
+ .homepage-content {
+     padding: 4vh 0px;
  }
 
 </style>
 <div class="hero">
     <div class="container">
-        <div class="row">
-            {{ .Render "single.hat" }}
-        </div>m
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+            <header class="homepage-container homepage-hat">
+                <div class="homepage-title">{{ partial "modules/page/title.html" . }}</div>
+                <div class="homepage-content">
+                    {{ .Content }}
+                </div>
+            </header>
+        </div>
     </div>
 </div>
 {{ end }}
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-
-            {{ if (eq (.Scratch.Get "url") "") }}
-            {{ .Render "single.hat" }}
-            {{ end }}
-            {{ .Render "single.content" }}
-            {{ .Render "single.boot" }}
-        </div>
-    </div>
-    <div class="row">
-        {{ range .Site.Sections }}
-        {{ partial "bloc/section/list.html" . }}
-        {{ end }}
-    </div>
-</div>
-
+{{ partial "homepage.html" . }}
 {{ partial "foot.html" . }}

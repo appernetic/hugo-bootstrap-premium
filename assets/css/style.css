@@ -172,3 +172,7 @@ details[open] summary {
     border-bottom: 1px solid #aaa;
     margin-bottom: .5em;
 }
+
+.text-center p {
+  text-align: center;
+}
