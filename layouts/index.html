@@ -3,40 +3,11 @@
 {{ .Scratch.Set "url" (cond (isset .Params "heroimage") .Params.heroImage (.Scratch.Get "url") ) }}
 {{ if (ne (.Scratch.Get "url") "") }}
 <style>
- .hero {
+ .homepage-hero {
      background-image: url({{.Scratch.Get "url"}});
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size:  cover;
-     height: 40vh;
  }
- .homepage-hat {
-     position: absolute;
-     right: 0px;
-     left:0px;
-     bottom: calc(-40vh + 1px);
-     background:linear-gradient(to bottom, rgba(68, 68, 68, 0.2), rgb(68, 68, 68));
- }
- body > .homepage-container {
-     padding-top: 5vh;
- }
- .homepage-title {
-     font-size: 5vw;
- }
-
- .homepage-container p {
-     text-align: center;
- }
- .homepage-container {
-     text-align: center;
-     color: #ddd;
- }
- .homepage-content {
-     padding: 4vh 0px;
- }
-
 </style>
-<div class="hero">
+<div class="homepage-hero">
     <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
             <header class="homepage-container homepage-hat">
