@@ -18,13 +18,7 @@
             </div>
 
             <div class="panel-body">
-                <ul>
-                    {{ range first 10 (where (where .Site.Pages "Type" "post") "IsPage" true) }}
-                    <li>
-                        <a href="{{ .Permalink }}">{{ partial "modules/page/title.html" . }}</a>
-                    </li>
-                    {{ end }}
-                </ul>
+                {{ partial "bloc/section/post-latest.html" . }}
             </div>
 
         </section>
