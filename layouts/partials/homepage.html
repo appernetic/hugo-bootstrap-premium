@@ -1,7 +1,3 @@
 <div class="container">
-    <div class="row">
-        {{ range .Site.Sections }}
-        {{ partial "bloc/section/list.html" . }}
-        {{ end }}
-    </div>
+    {{ partial "bloc/section/post-summary.html" . }}
 </div>

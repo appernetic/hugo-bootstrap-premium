@@ -1,0 +1,43 @@
+{{ with .Site.GetPage "post" }}
+<div class="row">
+    <div class="col-sm-12">
+        {{ partial "bloc/content/h2-link-title.html" . }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        {{ .Content }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <b>Latest post</b>
+                <div style="float: right"><a href="{{ "/post/" | relLangURL }}">- full list -</a></div>
+            </div>
+
+            <div class="panel-body">
+                <ul>
+                    {{ range first 10 (where (where .Site.Pages "Type" "post") "IsPage" true) }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ partial "modules/page/title.html" . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+        </section>
+    </div>
+    <div class="col-sm-6">
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <b>Tags</b>
+                <div style="float: right"><a href="{{ "/tags/" | relLangURL }}">- full list -</a></div>
+            </div>
+
+            {{ partial "modules/site/tag-cloud.html" . }}
+        </section>
+    </div>
+</div>
+{{ end }}
