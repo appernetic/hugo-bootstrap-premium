@@ -6,6 +6,19 @@
  .hero {
      background-image: url({{.Scratch.Get "url"}});
  }
+ .hero {
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size:  cover;
+     height: calc(200px + (450 - 200) * ((100vw - 300px) / (1600 - 300)));
+ }
+ .title-metas, .hat {
+     position: absolute;
+     right: 0px;
+     left:0px;
+     bottom: calc(-1 * (200px + (450 - 200) * ((100vw - 300px) / (1600 - 300))));
+     background:linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgb(255, 255, 255));
+ }
  body > .container {
      padding-top: 15px;
  }
