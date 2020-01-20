@@ -12,15 +12,15 @@ body {
 }
 
 h1 {
-  font-size: calc(31px + (36 - 31) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(26px + (36 - 26) * ((100vw - 300px) / (1600 - 300)));
 }
 
 h2 {
-  font-size: calc(26px + (31 - 26) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(23px + (31 - 23) * ((100vw - 300px) / (1600 - 300)));
 }
 
 h3 {
-  font-size: calc(21px + (26 - 21) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(20px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
   margin-left: 1vw;
 }
 
