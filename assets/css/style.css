@@ -6,25 +6,32 @@ html {
 
 body {
   font-family: 'Open Sans', 'sans-serif';
-  font-size: calc(13px + (18 - 13) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(12px + (17 - 12) * ((100vw - 300px) / (1600 - 300)));
   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
   margin-bottom: 75px;
 }
 
 h1 {
-  font-size: calc(33px + (39 - 33) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(31px + (36 - 31) * ((100vw - 300px) / (1600 - 300)));
 }
 
 h2 {
-  font-size: calc(28px + (32 - 28) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(26px + (31 - 26) * ((100vw - 300px) / (1600 - 300)));
 }
 
 h3 {
-  font-size: calc(20px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(21px + (26 - 21) * ((100vw - 300px) / (1600 - 300)));
+  margin-left: 1vw;
 }
 
 h4 {
-  font-size: calc(13px + (19 - 13) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(17px + (22 - 17) * ((100vw - 300px) / (1600 - 300)));
+  margin-left: 1.5vw;
+}
+
+h5 {
+  font-size: calc(13px + (18 - 13) * ((100vw - 300px) / (1600 - 300)));
+  margin-left: 2vw;
 }
 
 .footer {
@@ -67,6 +74,14 @@ img {
   margin: auto;
 }
 
+figcaption {
+  display: block;
+}
+
+figcaption p {
+  text-align: center;
+}
+
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
@@ -79,6 +94,21 @@ img {
 
 p {
   text-align: justify;
+  max-width: 95%;
+  margin: auto;
+}
+
+.content ul {
+  max-width: 94%;
+  margin: auto;
+}
+
+.panel-body {
+  padding: calc(10px + (15 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.panel-heading {
+  padding: calc(10px + (15 - 10) * ((100vw - 300px) / (1600 - 300)));
 }
 
 /* Responsive video? */
