@@ -96,6 +96,7 @@ p {
   text-align: justify;
   max-width: 95%;
   margin: auto;
+  padding-bottom: 5px;
 }
 
 .content ul {
