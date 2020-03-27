@@ -248,6 +248,7 @@ body > .homepage-container {
 .homepage-title {
   font-size: calc(38px + (44 - 38) * ((100vw - 300px) / (1600 - 300)));
   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  font-variant: small-caps;
 }
 .homepage-container p {
   text-align: center;

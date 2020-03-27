@@ -11,9 +11,11 @@
     <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
             <header class="homepage-container homepage-hat">
-                <div class="homepage-title">{{ partial "modules/page/title.html" . }}</div>
+                <div class="homepage-title">
+                    {{ partial "modules/page/title.html" . }}
+                </div>
                 <div class="homepage-content">
-                    {{ .Description }}
+                    {{ .Render "single.content" }}
                 </div>
             </header>
         </div>
