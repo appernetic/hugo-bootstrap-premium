@@ -9,7 +9,7 @@
     {{ .Render "summary" }}
     {{ end }}
 
-    {{ range .Paginator.Pages }}
+    {{ range sort .Paginator.Pages }}
     {{ .Render "summary" }}
     {{ end }}
     {{ partial "bloc/content/pagination.html" . }}
