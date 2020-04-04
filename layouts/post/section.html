@@ -4,7 +4,8 @@
         {{ partial "bloc/content/h1-title.html" . }}
     </header>
     {{ .Content }}
-    {{ range .Paginator.Pages.ByPublishDate.Reverse }}
+    {{ $paginator := .Paginate (where .Pages.ByPublishDate.Reverse "Type" "post")  }}
+    {{ range .Paginator.Pages }}
     {{ .Render "summary" }}
     {{ end }}
     {{ partial "bloc/content/pagination.html" . }}

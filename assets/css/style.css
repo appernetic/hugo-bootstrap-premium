@@ -1,4 +1,3 @@
-
 html {
   position: relative;
   min-height: 100%;
@@ -70,7 +69,7 @@ a.navbar-brand-img>img {
 
 img {
   display: block;
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   margin: auto;
 }
@@ -97,7 +96,7 @@ p {
   text-align: justify;
   max-width: 95%;
   margin: auto;
-  padding-bottom: 5px;
+  padding-bottom: calc(10px + (15 - 10) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .content ul {
