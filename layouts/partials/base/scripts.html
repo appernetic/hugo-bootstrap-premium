@@ -73,16 +73,18 @@
 
      <script type="text/x-mathjax-config">
      MathJax.Hub.Config({
+     extensions: ["tex2jax.js","[siunitx]/siunitx.js"],
      tex2jax: {
      inlineMath: [['$','$'], ['\\(','\\)']],
      displayMath: [['$$','$$'], ['\[','\]']],
      processEscapes: true,
      processEnvironments: true,
-     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+     },
      TeX: { equationNumbers: { autoNumber: "AMS" },
-     extensions: ["AMSmath.js", "AMSsymbols.js"] }
-     }
+     extensions: ["AMSmath.js", "AMSsymbols.js", "sinuitx.js"]}
      });
+     MathJax.Ajax.config.path['siunitx'] = 'https://raw.githubusercontent.com/burnpanck/MathJax-siunitx/master';
      </script>
 
      <script type="text/x-mathjax-config">
@@ -95,6 +97,7 @@
      </script> -->
 
 
+<!-- Version 3 -->
 <script>
  window.MathJax = {
      options: {
@@ -107,7 +110,8 @@
      tex: {packages: {'[+]': ['physics', 'color', 'ams']}}
  };
 </script>
-<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
 </script>
+
+<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 {{ end }}
