@@ -1,6 +1,7 @@
 {{ if .IsPage }}
 {{ if or ( .NextInSection ) ( .PrevInSection ) }}
-<nav><ul class="pager">
+<nav>
+    <ul class="pager">
     {{ if .NextInSection }}
     <li class="previous">
         <a href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
@@ -16,6 +17,7 @@
         </a>
     </li>
     {{end}}
-</ul> </nav>
+    </ul>
+</nav>
 {{ end }}
 {{ end }}

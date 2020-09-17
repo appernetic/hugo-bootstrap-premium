@@ -261,3 +261,11 @@ body > .homepage-container {
 .homepage-content {
   padding: 4vh 0px;
 }
+
+.navbar-nav-dark > li > a {
+  color: #b38f33;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-style: italic;
+  font-size: small;
+}
