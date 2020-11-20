@@ -1,9 +1,7 @@
 <div class="metas">
 {{ partial "modules/page/date.html" . }}
 {{ if .IsPage }}
-  <small>{{ with .Params.author }}
-    &middot; {{ i18n "byauthor" }} {{ . }}
-  {{ end }}
+    <small> {{ partial "bloc/content/authors.html" . }}
   &middot; {{ i18n "readinabout" . }}
   &middot; ({{ i18n "words" . }})
   &middot; {{ partial "bloc/content/sharing.html" . }}

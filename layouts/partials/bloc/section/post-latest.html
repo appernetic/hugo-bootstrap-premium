@@ -1,0 +1,7 @@
+<ul>
+    {{ range first 10 (where (where .Site.Pages.ByPublishDate.Reverse "Type" "post") "IsPage" true) }}
+    <li>
+        <a href="{{ .Permalink }}">{{ partial "modules/page/title.html" . }} <small>({{ partial "modules/page/date.html" . }})</small></a>
+    </li>
+    {{ end }}
+</ul>

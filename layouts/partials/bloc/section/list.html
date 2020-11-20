@@ -1,0 +1,7 @@
+<div class="col-sm-12 col-lg-6">
+    {{ partial "bloc/content/h1-link-title.html" . }}
+    {{ .Content }}
+    {{ range first 3 .Pages.ByPublishDate.Reverse  }}
+    {{ .Render "summary" }}
+    {{ end }}
+</div>

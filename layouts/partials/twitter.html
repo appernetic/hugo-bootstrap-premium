@@ -1,0 +1,41 @@
+{{ $permalink_pretty := .Permalink | replaceRE "\\.html$" "/" }} <!-- Always have a trailing slash, even with uglyURLs enabled. -->
+{{- with $.Params.images -}}
+<meta name="twitter:card" content="summary_large_image"/>
+<!-- As per https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image,
+     the required card property is "twitter:image", not "twitter:image:src". -->
+{{- $image := (index . 0) -}}
+{{ if (findRE "^/" $image) }} <!-- If image link has a leading slash -->
+<!-- Cannot use absURL below because it doesn't work as expected if baseURL has a subdir.
+     See https://hugo-sandbox.netlify.com/subdir-canonify-true/ .
+-->
+{{ $baseurl_no_trailing_slash := $.Site.BaseURL | replaceRE "/$" "" }}
+<meta name="twitter:image" content="{{- (printf "%s%s" $baseurl_no_trailing_slash $image) -}}"/>
+{{- else -}}
+<meta name="twitter:image" content="{{- (printf "%s%s" $permalink_pretty $image) -}}"/>
+{{- end -}}
+{{ else -}}
+{{- $images := $.Resources.ByType "image" -}}
+{{- $featured := $images.GetMatch "*feature*" -}}
+{{- $featured := cond (ne $featured nil) $featured ($images.GetMatch "{*cover*,*thumbnail*}") -}}
+{{- with $featured -}}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="{{ $featured.Permalink }}"/>
+{{- else -}}
+<meta name="twitter:card" content="summary"/>
+{{- with $.Site.Params.images -}}
+{{- $image := (index . 0) -}}
+{{ if (findRE "^/" $image) }} <!-- If image link has a leading slash -->
+{{ $baseurl_no_trailing_slash := $.Site.BaseURL | replaceRE "/$" "" }}
+<meta name="twitter:image" content="{{- (printf "%s%s" $baseurl_no_trailing_slash $image) -}}"/>
+{{- else -}}
+<meta name="twitter:image" content="{{- (printf "%s%s" $permalink_pretty $image) -}}"/>
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end }}
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . | markdownify | plainify }}{{ else }}{{ if .IsPage }}{{ partial "bloc/content/summary_minus_toc.html" . | markdownify | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify | plainify }}{{ end }}{{ end }}{{ end -}}"/>
+{{ with .Site.Params.twitter -}}
+<meta name="twitter:site" content="@{{ . }}"/>
+<meta name="twitter:creator" content="@{{ . }}"/>
+{{ end -}}

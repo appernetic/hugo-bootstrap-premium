@@ -4,15 +4,10 @@
         {{ partial "bloc/content/h1-title.html" . }}
     </header>
     {{ .Content }}
-
-    {{ range .Sections }}
-    {{ .Render "summary" }}
-    {{ end }}
-
-    {{ range sort .Paginator.Pages }}
+    {{ $paginator := .Paginate (where .Pages.ByPublishDate.Reverse "Type" "post")  }}
+    {{ range .Paginator.Pages }}
     {{ .Render "summary" }}
     {{ end }}
     {{ partial "bloc/content/pagination.html" . }}
-
 </div>
 {{ partial "foot.html" . }}
