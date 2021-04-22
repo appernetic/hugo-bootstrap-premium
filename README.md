@@ -157,6 +157,14 @@ disqusShortname = "your_disqus_shortname"
   optin = true #opt-in: true/false
 
 [params]
+  ## Commento Host
+  #commentoHostname = ""
+  ## Coral Host
+  #coralHostname = ""
+  ## Remark42 Host
+  #remarkHostname = ""
+  #remarkID = ""
+
   # bootswatch theme name, select one: cerulean, cosmo, cyborg, darkly,
   # default, flatly, journal,  lumen, paper, readable, sandstone, simplex,
   # slate, spacelab, superhero, united, yeti.
