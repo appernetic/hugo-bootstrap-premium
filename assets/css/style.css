@@ -191,7 +191,9 @@ dd {
 }
 
 pre {
-    padding: 2px;
+    padding: 5px;
+    width: 93%;
+    margin: 0 auto 21px auto;
 }
 
 pre code {
@@ -200,8 +202,7 @@ pre code {
 }
 
 .highlight {
-    width: 91%;
-    margin: auto;
+
 }
 
 .fa-facebook-official { color: #3b5998; }
