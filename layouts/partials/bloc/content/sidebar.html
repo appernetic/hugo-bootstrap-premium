@@ -1,20 +1,5 @@
 <div>
-    {{ if and .IsPage (eq .Params.toc true) }}
-    <div class="section">
-        <header><div class="title"></div></header>
-
-    </div>
-    <section class="panel panel-default">
-        <div class="panel-heading">
-            <b>Table Of Contents</b>
-        </div>
-
-        <div class="panel-body">
-            <div class="list-default">{{ .TableOfContents }}</div>
-        </div>
-
-    </section>
-    {{ end }}
+    {{ partial "bloc/content/toc.html" . }}
 
     <section class="panel panel-default">
         <div class="panel-heading">
