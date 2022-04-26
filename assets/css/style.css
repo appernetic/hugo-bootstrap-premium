@@ -88,13 +88,13 @@ a.navbar-brand-img>img {
 
 img {
     display: block;
-    width:90%;
+    /* width:90%; */
     max-width:640px;
     height: auto;
     margin: auto;
 }
 
-img:hover{
+/* img:hover{
   color: #424242;
   -webkit-transition: all .3s ease-in;
   -moz-transition: all .3s ease-in;
@@ -103,9 +103,9 @@ img:hover{
   transition: all .3s ease-in;
   opacity: 1;
   transform: scale(1.15);
-  -ms-transform: scale(1.15); /* IE 9 */
-  -webkit-transform: scale(1.15); /* Safari and Chrome */
-}
+  -ms-transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+} */
 
 figcaption {
   display: block;
