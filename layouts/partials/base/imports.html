@@ -14,9 +14,9 @@
 {{ .Scratch.Add "css" (slice (resources.Get "css/google-fonts.css"))}}
 {{ .Scratch.Add "css" (slice (resources.Get "css/style.css"))}}
 
-{{ .Scratch.Set "highlight" (slice (resources.Get "css/highlight/default.css")) }}
+{{ .Scratch.Set "highlight" (slice (resources.Get "css/highlight-11.7.0/default.min.css")) }}
 {{ if isset .Site.Params "highlight" }}
-    {{ $htTheme := printf "css/highlight/%s.css" $.Site.Params.highlight }}
+    {{ $htTheme := printf "css/highlight-11.7.0/%s.min.css" $.Site.Params.highlight }}
     {{ .Scratch.Set "highlight" (slice (resources.Get $htTheme))}}
 {{ end }}
 {{ .Scratch.Add "css" (.Scratch.Get "highlight")}}

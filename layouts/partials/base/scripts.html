@@ -17,7 +17,7 @@
     {{ .Scratch.Add "js" (slice (resources.Get "js/angular.min.js"))}}
     {{ .Scratch.Add "js" (slice (resources.Get "js/popover/angular-storage.min.js"))}}
 {{ end }}
-{{ .Scratch.Add "js" (slice (resources.Get "js/highlight.pack.js"))}}
+{{ .Scratch.Add "js" (slice (resources.Get "js/highlight-11.7.0.min.js"))}}
 {{ .Scratch.Add "js" (slice (resources.Get "js/site.js"))}}
 
 {{ with .Site.Params.googleAnalytics }}
