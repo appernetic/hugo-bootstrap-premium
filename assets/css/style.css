@@ -18,13 +18,13 @@ body {
 
 #main {
   overflow:auto;
-	padding-bottom: 180px; /* must be same height as the footer */
+	padding-bottom: 140px; /* must be same height as the footer */
 } 
 
 .footer {
   position: relative;
-  margin-top: -180px; /* negative value of footer height */
-  height: 180px;
+  margin-top: -140px; /* negative value of footer height */
+  height: 140px;
   clear: both;
   width: 100%;
   text-align: left;
