@@ -1,26 +1,30 @@
-{{ partial "head.html" . }}
-{{ .Scratch.Set "url" (cond (isset .Site.Params "heroimage") .Site.Params.heroImage "") }}
-{{ .Scratch.Set "url" (cond (isset .Params "heroimage") .Params.heroImage (.Scratch.Get "url") ) }}
-{{ if (ne (.Scratch.Get "url") "") }}
-<style>
- .homepage-hero {
-     background-image: url({{.Scratch.Get "url"}});
- }
-</style>
-<div class="homepage-hero">
-    <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-            <header class="homepage-container homepage-hat">
-                <div class="homepage-title">
-                    {{ partial "modules/page/title.html" . }}
+<div id="wrap">
+	<div id="main">
+        {{ partial "head.html" . }}
+        {{ .Scratch.Set "url" (cond (isset .Site.Params "heroimage") .Site.Params.heroImage "") }}
+        {{ .Scratch.Set "url" (cond (isset .Params "heroimage") .Params.heroImage (.Scratch.Get "url") ) }}
+        {{ if (ne (.Scratch.Get "url") "") }}
+        <style>
+        .homepage-hero {
+            background-image: url({{.Scratch.Get "url"}});
+        }
+        </style>
+        <div class="homepage-hero">
+            <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+                    <header class="homepage-container homepage-hat">
+                        <div class="homepage-title">
+                            {{ partial "modules/page/title.html" . }}
+                        </div>
+                        <div class="homepage-content">
+                            {{ .Description }}
+                        </div>
+                    </header>
                 </div>
-                <div class="homepage-content">
-                    {{ .Description }}
-                </div>
-            </header>
+            </div>
         </div>
+        {{ end }}
+        {{ partial "homepage.html" . }}
     </div>
 </div>
-{{ end }}
-{{ partial "homepage.html" . }}
 {{ partial "foot.html" . }}

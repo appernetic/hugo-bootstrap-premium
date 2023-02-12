@@ -1,14 +1,40 @@
+* {margin:0;padding:0;} 
+
 html {
-  position: relative;
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
   font-family: 'Open Sans', 'sans-serif';
   font-size: calc(15px + (17 - 15) * ((100vw - 300px) / (1600 - 300)));
   line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
-  margin-bottom: 75px;
   color: #333;
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+	padding-bottom: 180px; /* must be same height as the footer */
+} 
+
+.footer {
+  position: relative;
+  margin-top: -180px; /* negative value of footer height */
+  height: 180px;
+  clear: both;
+  width: 100%;
+  text-align: left;
+}
+
+.footer .navbar-nav li a {
+  width: 12em; /* the element needs a fixed width (in px, em, %, etc) */
+  overflow: hidden; /* make sure it hides the content that overflows */
+  white-space: nowrap; /* don't break the line */
+  text-overflow: ellipsis; /* give the beautiful '...' effect */
 }
 
 h1 {
@@ -44,25 +70,6 @@ ul {
 
 #TableOfContents ul ul {
     list-style-type: disc;
-}
-
-.footer {
-  position: absolute;
-  /*bottom: -5%;*/
-  width: 100%;
-  text-align: left;
-  padding-bottom: 1rem;
-}
-
-.footer .navbar-nav li a {
-  width: 12em; /* the element needs a fixed width (in px, em, %, etc) */
-  overflow: hidden; /* make sure it hides the content that overflows */
-  white-space: nowrap; /* don't break the line */
-  text-overflow: ellipsis; /* give the beautiful '...' effect */
-}
-
-body > .container {
-  padding: 75px 15px 0;
 }
 
 .navbar-brand {

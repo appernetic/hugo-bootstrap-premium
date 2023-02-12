@@ -1,13 +1,17 @@
-{{ partial "head.html" . }}
-<div id="main-content" class="container">
-    <header>
-        {{ partial "bloc/content/h1-title.html" . }}
-    </header>
-    {{ .Content }}
-    {{ $paginator := .Paginate (where .Pages.ByPublishDate.Reverse "Type" "post")  }}
-    {{ range .Paginator.Pages }}
-    {{ .Render "summary" }}
-    {{ end }}
-    {{ partial "bloc/content/pagination.html" . }}
+<div id="wrap">
+	<div id="main">
+        {{ partial "head.html" . }}
+        <div id="main-content" class="container">
+            <header>
+                {{ partial "bloc/content/h1-title.html" . }}
+            </header>
+            {{ .Content }}
+            {{ $paginator := .Paginate (where .Pages.ByPublishDate.Reverse "Type" "post")  }}
+            {{ range .Paginator.Pages }}
+            {{ .Render "summary" }}
+            {{ end }}
+            {{ partial "bloc/content/pagination.html" . }}
+        </div>
+    </div>
 </div>
 {{ partial "foot.html" . }}

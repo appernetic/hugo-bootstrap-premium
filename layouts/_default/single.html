@@ -1,46 +1,50 @@
 {{ partial "head.html" . }}
-{{ .Scratch.Set "url" (cond (isset .Site.Params "heroimage") .Site.Params.heroImage "") }}
-{{ .Scratch.Set "url" (cond (isset .Params "heroimage") .Params.heroImage (.Scratch.Get "url") ) }}
-{{ if (ne (.Scratch.Get "url") "") }}
-<style>
- .hero {
-     background-image: url({{.Scratch.Get "url"}});
- }
- .hero {
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size:  cover;
-     height: calc(200px + (450 - 200) * ((100vw - 300px) / (1600 - 300)));
- }
- .title-metas, .hat {
-     position: absolute;
-     right: 0px;
-     left:0px;
-     bottom: calc(-1 * (200px + (450 - 200) * ((100vw - 300px) / (1600 - 300))));
-     background:linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgb(255, 255, 255));
- }
- body > .container {
-     padding-top: 15px;
- }
-</style>
-<div class="hero">
-    <div class="container">
-        <div class="row">
-            {{ .Render "single.hat" }}
+<div id="wrap">
+	<div id="main">
+        {{ .Scratch.Set "url" (cond (isset .Site.Params "heroimage") .Site.Params.heroImage "") }}
+        {{ .Scratch.Set "url" (cond (isset .Params "heroimage") .Params.heroImage (.Scratch.Get "url") ) }}
+        {{ if (ne (.Scratch.Get "url") "") }}
+        <style>
+        .hero {
+            background-image: url({{.Scratch.Get "url"}});
+        }
+        .hero {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:  cover;
+            height: calc(200px + (450 - 200) * ((100vw - 300px) / (1600 - 300)));
+        }
+        .title-metas, .hat {
+            position: absolute;
+            right: 0px;
+            left:0px;
+            bottom: calc(-1 * (200px + (450 - 200) * ((100vw - 300px) / (1600 - 300))));
+            background:linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgb(255, 255, 255));
+        }
+        body > .container {
+            padding-top: 15px;
+        }
+        </style>
+        <div class="hero">
+            <div class="container">
+                <div class="row">
+                    {{ .Render "single.hat" }}
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-{{ end }}
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
+        {{ end }}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
 
-            {{ if (eq (.Scratch.Get "url") "") }}
-            {{ .Render "single.hat" }}
-            {{ end }}
-            {{ .Render "single.content" }}
-            {{ .Render "single.boot" }}
+                    {{ if (eq (.Scratch.Get "url") "") }}
+                    {{ .Render "single.hat" }}
+                    {{ end }}
+                    {{ .Render "single.content" }}
+                    {{ .Render "single.boot" }}
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</div>  
 {{ partial "foot.html" . }}
