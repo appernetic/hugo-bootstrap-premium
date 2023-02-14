@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-12">
+        {{ partial "bloc/content/h2-link-title.html" . }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        {{ .Content }}
+    </div>
+    <div class="col-sm-6">
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <b>Articles</b>
+                <div style="float: right"><a href="{{ .Permalink }}">- full list -</a></div>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    {{ range .Pages }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ partial "modules/page/title.html" . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>

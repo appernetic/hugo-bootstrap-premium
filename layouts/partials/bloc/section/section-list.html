@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <b>Latest articles</b>
+                <div style="float: right"><a href="{{ .Permalink }}">- full list -</a></div>
+            </div>
+
+            <div class="panel-body">
+              <ul>
+                    {{ range .Pages }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ partial "modules/page/title.html" . }} <small>({{ partial "modules/page/date.html" . }})</small></a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>

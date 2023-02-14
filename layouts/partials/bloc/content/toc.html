@@ -1,0 +1,12 @@
+{{ if .Site.Params.showTOC }}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <b>Table Of Contents</b>
+  </div>
+
+  <div class="panel-body">
+    <div class="list-default">{{ .TableOfContents }}</div>
+  </div>
+
+</div>
+{{ end }}

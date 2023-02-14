@@ -1,12 +1,22 @@
-{{ partial "head.html" . }}
-<div id="main-content" class="container">
-  <header>
-    {{ partial "bloc/content/h1-title.html" . }}
-  </header>
-  {{ .Content }}
-  {{ range $index, $foo := .Paginator.Pages  }}
-    {{ .Render "section.li" }}
-  {{ end }}
-  {{ partial "bloc/content/pagination.html" . }}
+<div id="wrap">
+	<div id="main">
+        {{ partial "head.html" . }}
+        <div id="main-content" class="container">
+            <header>
+                {{ partial "bloc/content/h1-title.html" . }}
+            </header>
+            {{ .Content }}
+
+            {{ range .Sections }}
+            {{ .Render "summary" }}
+            {{ end }}
+
+            {{ range sort .Paginator.Pages }}
+            {{ .Render "summary" }}
+            {{ end }}
+            {{ partial "bloc/content/pagination.html" . }}
+
+        </div>
+    </div>
 </div>
 {{ partial "foot.html" . }}

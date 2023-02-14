@@ -1,21 +1,25 @@
-{{ partial "head.html" . }}
-<div id="main-content" class="container">
-  <header>
-    {{ partial "bloc/content/h1-title.html" . }}
-  </header>
-  <ul class="container content">
-  {{ $baseurl := .Site.BaseURL }}
-  {{ $data := .Data }}
-  {{ range $key,$value := .Data.Terms.ByCount }}
-    <li>
-      <a href="{{ $data.Plural | relLangURL }}/{{ $value.Name | urlize }}">
-        {{ $value.Name }}
-      </a>
-      <strong>
-        {{ $value.Count }}
-      </strong>
-    </li>
-  {{ end }}
-  </ul>
+<div id="wrap">
+	<div id="main">    
+    {{ partial "head.html" . }}
+    <div id="main-content" class="container">
+      <header>
+        {{ partial "bloc/content/h1-title.html" . }}
+      </header>
+      <ul class="container content">
+      {{ $baseurl := .Site.BaseURL }}
+      {{ $data := .Data }}
+      {{ range $key,$value := .Data.Terms.ByCount }}
+        <li>
+          <a href="{{ $data.Plural | relLangURL }}/{{ $value.Name | urlize }}">
+            {{ $value.Name }}
+          </a>
+          <strong>
+            {{ $value.Count }}
+          </strong>
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+  </div>
 </div>
 {{ partial "foot.html" . }}

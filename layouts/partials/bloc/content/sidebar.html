@@ -1,37 +1,25 @@
 <div>
-  {{ if and .IsPage (eq .Params.toc true) }}
-    <div class="section">
-      <header><div class="title">TableOfContents</div></header>
-      <div class="list-default">{{ .TableOfContents }}</div>
-    </div>
-    {{ end }}
+    {{ partial "bloc/content/toc.html" . }}
 
-    <div class="section">
-      <header><div class="title"><b>{{ i18n "latestposts" }}</b></div></header>
-      <div class="content">
-        <ul>
-        {{ range first 10 (where (where .Site.Pages "Type" "post") "IsPage" true) }}
-          <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </li>
-        {{ end }}
-        </ul>
-      </div>
-    </div>
-
-    {{ range $key, $value := .Site.Taxonomies }}
-      {{ $len := len $value }}
-      {{ if (not ( eq $len 0 ) ) }}
-      <div class="section taxonomies">
-        <header><div class="title"><b>{{ $key | singularize }}</b></div></header>
-
-        <div class="content">
-          <ul>
-            {{ range first 10 $value.ByCount }}<li><a href="{{$.LanguagePrefix }}/{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
-          </ul>
+    <section class="panel panel-default">
+        <div class="panel-heading">
+            <b>Latest post</b>
+            <div style="float: right"><a href="{{ "/post/" | relLangURL }}">- full list -</a></div>
         </div>
-      </div>
-      {{ end }}
-    {{ end }}
+
+        <div class="panel-body">
+            {{ partial "bloc/section/post-latest.html" . }}
+        </div>
+
+    </section>
+
+    <section class="panel panel-default">
+        <div class="panel-heading">
+            <b>Tags</b>
+            <div style="float: right"><a href="{{ "/tags/" | relLangURL }}">- full list -</a></div>
+        </div>
+
+        {{ partial "modules/site/tag-cloud.html" . }}
+    </section>
 
 </div>

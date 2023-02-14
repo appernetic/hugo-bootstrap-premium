@@ -22,52 +22,74 @@
 {{ else }}
 <meta property="content-source" content="{{ .File.Path}}">
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ .Description }}"/>
+<meta property="og:description" content="{{ with .Description }}{{ . | markdownify | plainify }}{{ else }}{{ if .IsPage }}{{ partial "bloc/content/summary_minus_toc.html" . | markdownify | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify | plainify }}{{ end }}{{ end }}{{ end -}}"/>
 <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
 <meta property="og:article:modified_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
 
-  {{ if .Keywords }}
-    {{ range .Keywords }}
+{{ if .Keywords }}
+{{ range .Keywords }}
 <meta property="og:article:tag" content="{{ . }}">
-    {{ end }}
-  {{ else if isset .Params "tags" }}
-    {{ range .Params.tags }}
+{{ end }}
+{{ else if isset .Params "tags" }}
+{{ range .Params.tags }}
 <meta property="og:article:tag" content="{{ . }}">
-    {{ end }}
-  {{ end }}
+{{ end }}
+{{ end }}
 
-  {{ if ne .Site.Params.twitter "" }}
+{{ if ne .Site.Params.twitter "" }}
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
 <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}" />
 <meta name="twitter:title" content="{{ .Title }}" />
-<meta name="twitter:description" content="{{ .Description }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . | markdownify | plainify }}{{ else }}{{ if .IsPage }}{{ partial "bloc/content/summary_minus_toc.html" . | markdownify | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify | plainify }}{{ end }}{{ end }}{{ end -}}"/>
 <meta name="twitter:url" content="{{ .Permalink }}" />
 <meta name="twitter:domain" content="{{ .Site.BaseURL }}">
-  {{ end }}
+{{ end }}
 
-  {{ if ne .Site.Params.googleplus "" }}
+{{ if ne .Site.Params.googleplus "" }}
 <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "headline": "{{ .Title }}",
-    "author": {
-      "@type": "Person",
-      "name": "http://profiles.google.com/+{{ .Site.Params.googleplus }}?rel=author"
-    },
-    "datePublished": "{{ .Date.Format "2006-01-02" }}",
-    "description": "{{ .Description }}",
-    "wordCount": {{ .WordCount }}
-  }
+ {
+     "@context": "http://schema.org",
+     "@type": "Article",
+     "headline": "{{ .Title }}",
+     "author": {
+         "@type": "Person",
+         "name": "http://profiles.google.com/+{{ .Site.Params.googleplus }}?rel=author"
+     },
+     "datePublished": "{{ .Date.Format "2006-01-02" }}",
+     "description": "{{ .Description }}",
+     "wordCount": {{ .WordCount }}
+ }
 </script>
-  {{ end }}
+{{ end }}
 {{ end }}
 
-{{ if .RSSLink }}
-<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />
-{{ end }}
+{{ range .AlternativeOutputFormats -}}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
 <link rel="canonical" href="{{ .Permalink }}" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
-<link rel="icon" href="/favicon.png">
-{{ .Hugo.Generator }}
+
+<!-- ****** faviconit.com favicons ****** -->
+<link rel="shortcut icon" href="/favicon/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/favicon/favicon-192.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/favicon/favicon-160.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="/favicon/favicon-57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicon/favicon-114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicon/favicon-72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicon/favicon-144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicon/favicon-60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicon/favicon-120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicon/favicon-76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicon/favicon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/favicon/favicon-144.png">
+<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+<!-- ****** faviconit.com favicons ****** -->
+
+{{ hugo.Generator }}
