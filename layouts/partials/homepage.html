@@ -9,7 +9,7 @@
     {{ end }}
     <div class="row">
       <div class="col-sm-{{ if .Site.Params.showRightSidebar }}9{{ else }}12{{ end }}">
-        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        {{ $paginator := .Paginate (where site.RegularPages "Type" "post") }}
         {{ range $paginator.Pages }}
           {{ .Render "summary" }}
         {{ end }}
